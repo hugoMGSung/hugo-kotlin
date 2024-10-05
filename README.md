@@ -15,3 +15,17 @@
 
 	![프로젝트](https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0001.png)
 
+3. 생성 클릭
+
+### 소스 확인
+- Main.kt에 작성된 자동 생성 기본소스
+
+	```kotlin
+	fun main(args: Array<String>) {
+		println("Hello World!")
+
+		// Try adding program arguments via Run/Debug configuration.
+		// Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
+		println("Program arguments: ${args.joinToString()}")
+	}
+	```
