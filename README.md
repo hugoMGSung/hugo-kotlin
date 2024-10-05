@@ -4,7 +4,7 @@
 ## 교재
 - 초보자를 위한 코틀린 200제 
 	<!-- - [교재](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=145772464) -->
-	<a href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=145772464" target="_blank">
+	<a href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=145772464" target="_blank">교재링크</a>
 
 ### 개발환경
 - JDK
