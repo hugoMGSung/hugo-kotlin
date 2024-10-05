@@ -29,6 +29,18 @@ fun main(args: Array<String>) {
     ch = '\uAC00'
     println(ch)
 
-    ch = '가'
-    println(ch.toInt())
+    ch = '1'
+    // println(ch.toInt()) // deprecated
+    println(ch.digitToInt())
+
+    // 011~ 문자열
+    var str: String = "Hello"
+
+    str = str + "\tKotlin!"
+    println(str)
+
+    val c = 10
+    var d = 20
+    println("c = $c")
+    println("c + d = ${c + d}")
 }

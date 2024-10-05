@@ -68,3 +68,9 @@
 - (67.5f + 658.4).toFloat() : Float 타입으로 변환하는 메서드
 
 #### 010 문자타입
+- Deprecated 확인
+
+	```kotlin
+	ch = 'A'
+    println(ch.toInt()) // toInt() is deprecated 
+	```
