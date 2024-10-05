@@ -13,4 +13,5 @@
 1. 새 프로젝트 선택
 2. 아래처럼 작성
 
-	![프로젝트]()
+	![프로젝트](https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0001.png)
+
