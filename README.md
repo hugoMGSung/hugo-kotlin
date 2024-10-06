@@ -63,9 +63,12 @@
 - Int
 - Long
 - Float, Double
-- 10L : Long 타입
-- 67.5f : Float 타입
-- (67.5f + 658.4).toFloat() : Float 타입으로 변환하는 메서드
+	- 10L : Long 타입
+	- 67.5f : Float 타입
+	- (67.5f + 658.4).toFloat() : Float 타입으로 변환하는 메서드
+- Any - Object와 동일
+- Unit - Java의 void
+- Nothing - 정상적으로 끝나지 않음을 나타내는 타입
 
 #### 010 문자타입
 - Deprecated 확인
@@ -73,4 +76,46 @@
 	```kotlin
 	ch = 'A'
     println(ch.toInt()) // toInt() is deprecated 
+	```
+
+- 일반 문자의 숫자화, 유니코드의 숫자화, 숫자형 문자의 숫자화는 다 다르다!
+
+#### 013 타입별명
+- typealias 새로운타입명 = 기존타입
+
+#### 017, 018 논리연산자, 비교연산자
+- kt02_basicBank - 00 ~ 018까지 일부 학습
+
+#### 019 흐름제어 if
+- 기본 생략
+
+#### 022 if-else 표현식
+- 특별한 방식
+
+	```kotlin
+    // 022 if-else 표현식
+    var value: Int = if (10 > 5) {
+        println("10은 5보다 큼")
+        10
+    } else {
+        println("10은 5보다 작음")
+        5
+    }
+    println(value)	
+	```
+
+#### 023 흐름제어 - when
+- switch - case와 동일
+
+	```kotlin
+    // 023 흐름제어 - When
+    val score = 64
+
+    when (score / 10) {
+        6 -> { println('D') }
+        7 -> { println('C') }
+        8 -> { println('B') }
+        9, 10 -> { println('A') }
+        else -> { println('F') }
+    }
 	```

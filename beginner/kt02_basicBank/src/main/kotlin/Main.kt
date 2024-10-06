@@ -43,4 +43,29 @@ fun main(args: Array<String>) {
     var d = 20
     println("c = $c")
     println("c + d = ${c + d}")
+
+    // 013 타입별명
+    val e: Number = 11
+    println(e)
+
+    // 014 주석
+    // 한줄 주석
+    /* 여러줄
+       주석
+     */
+
+    // 015 할당연산자 - 기본적 언어들과 동일
+
+    // 017 비교연산자
+    var isRight: Boolean = (10 + 80) > (3 * 20)
+    println(isRight)
+
+    isRight = 30 == (10 + 19)
+    println(isRight)
+
+    // 018 논리연산자
+    var bool: Boolean = (a - b < a+ b) && (a == 100)
+    println(bool)
 }
+
+typealias Number = Int
