@@ -119,3 +119,9 @@
         else -> { println('F') }
     }
 	```
+
+#### 025~029 while, continue, break
+- 설명 생략!
+
+#### 030 Function
+- 
