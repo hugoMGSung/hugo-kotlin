@@ -72,4 +72,44 @@ fun main(args: Array<String>) {
     }
 
     println("x = ${x}, y = ${y}")
+
+    // 030. Function
+    println(myFunction() + 10)
+
+    // 031. Parameter or Argument
+    println(celToFah(30))
+
+    // 034. 가변인수
+    println(getSumOf(1,2,3,4,5,6,7,8,9,10))
+}
+
+fun myFunction(): Int {
+    val a = 3
+    val b = 6
+    println("a: " + a + ", b: " + b)
+    return a + b
+}
+
+fun celToFah(celsius: Int): Double {
+    return celsius * 1.8 + 32
+}
+
+fun getAverage(a: Int, b: Int): Double {
+    return (a + b)/ 2.0
+}
+
+// 032. Unit타입. 리턴이 없을때
+fun celToFah2(celsius: Int): Unit {
+    println(celsius * 1.8 + 32)
+}
+
+// 034. 가변인수
+fun getSumOf(vararg numbers: Int): Int {
+    var i = 0; var sum = 0
+
+    while (i < numbers.size) {
+        sum += numbers[i]
+        i++
+    }
+    return sum
 }
