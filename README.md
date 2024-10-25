@@ -417,3 +417,106 @@
 - Nullable: null 을 지정할 수 있음을 뜻함
 - null: 참조 변수가 아무것도 가리키지 않음을 뜻함
 - 타입명 뒤에 ? 을 붙이면 변수를 Nullable 하게 생성
+
+#### 076 Safe call operator ?.
+- 참조변수에 null이 들어있을 때는 프로퍼티나 멤버함수에 접근이 불가능
+- Nullable한 참조변수에 접근할때는 ?. 으로 접근해야 함
+- ?.는 참조변수가 null일때 함수 호출을 하지 않게 해줌
+
+#### 077 Not-null Assertion operator !!
+- !!로 Nullable 타입을 강제로 일반타입으로 캐스팅 가능
+- 참조변수에 null이 있는 상태에서 !!연산자를 수행해면 KotlinNullPointerException 예외발생
+
+#### 078 Elvis operator ?:
+- '표현식 ?: 표현식' 형태
+- 왼쪽 피연산자가 null이 아니면 왼쪽 피연산자, null이면 오른쪽 피연산자가 결과가 됨
+
+	```kotlin
+	val number: Int? = null
+	println(number ?: 0) // 0
+	```
+
+#### 079 스마트 캐스팅 !!
+- 일정조건을 만족할 때 자동으로 캐스팅 발생
+- if 문으로 null 검사를 하면 Nullable 타입이 일반 타입으로 자동 캐스팅!
+
+	```kotlin
+	fun main() {
+		// 079. Smart Casting
+		val number: Int? = null
+		val number2 = 1225
+
+		checkNull(number)
+		checkNull(number2)
+
+		println(number)
+	}
+
+	// 079
+	fun checkNull(any: Any?) {
+		if (any == null) {
+			println("null이 들어왔습니다.")
+			return
+		}
+		println(any.toString())
+	}	
+	```
+
+#### 080 is operator
+- 참조변수가 특정 타입의 객체를 가리키는 지 여부를 조사
+- '표현식 is 타입명' 형태 사용 true/false
+
+#### 081 as operator / Downcasting
+- 슈퍼클래스를 서브클래스로 변환하는 것 - 다운캐스팅
+- as 연산자로 다운캐스팅 수행
+- '표현식 as 타입명' 형태 사용
+- 지정한 타입이 아니면 예외발생
+- 예외발생 원치 않으면 as? 연산자 사용, 예외대신 null 리턴
+
+
+#### 082 Access Modifier
+- Java와 동일(?)
+- public, internal, protected, private 형태
+
+#### 085 접근지정자 오버라이딩
+- 오버라이딩시 접근지정자 변경 가능
+- 단, protected -> public 과 같이 개방되어가는 방향으로만 오버라이딩 가능
+
+#### 086 Extension Function
+- 확장함수 - 이미 선언된 클래스에 멤버함수를 추가하는 기능
+- 'fun 클래스명.함수명(인수): 타입 { ... }' 형태로 선언
+
+#### 087 Extension Property
+- 프로퍼티도 클래스 외부에서 확장 가능
+
+#### 089 Companion object 동반자 객체
+- 클래스 내부에 존재하는 하나뿐이 객체
+- 인스턴스 간 공유할 객체가 필요할 때 사용
+- 'companion object {...}' 형태로 선언
+
+#### 090 inline Function
+- 함수 앞에 inline 키워드 붙이면 됨
+- 컴파일시 함수를 호출하는 코드를 함수 몸체로 대체하여 성능을 높임
+
+#### 091 const
+- var/val 앞에 const 키워드를 붙이면 변경불가 변수가 됨
+
+#### 092 lateinit
+- 프로퍼티나 앞에 lateinit 키워드를 붙여 변수 초기화를 뒤로 미룰 수 있음
+- 변수 초기화 하지 않고 접근하면 예외발생
+
+	```kotlin
+	// 점을 표현하는 클래스
+	class Point(val x: Int, val y: Int)
+	
+	// 사각형을 표현하는 클래스
+	class Rect
+	{
+		lateinit var pt: Point
+		lateinit var pt2: Point
+
+		val width: Int get() = pt2.x - pt.x
+		val height: Int get() = pt2.y - pt.y
+		val area get() = width * height
+	}
+	```

@@ -1,5 +1,7 @@
 package kt05_basicbank
 
+import org.jetbrains.annotations.Nullable
+
 // 047. Class
 class Manager {
     var name: String = ""
@@ -117,6 +119,60 @@ fun main() {
 
     // 062. in operator
     println('o' in "Hi, Kotlin!")
+
+    // 054.
+    var building = Building()
+    building.name = "H프라자"
+    building.date = "1989-12-13"
+    building.area = 150 * 9
+    building.print()
+
+    // 076. Safe call operator ?.
+    var bld: Building? = null
+    bld?.print() // 아무것도 나오지 않음
+    bld?.name = "먼건물"
+
+    bld = Building()
+    bld?.name = "경기장"
+    bld?.date = "2020-10-01"
+    bld?.area = 3_456
+    bld?.print()
+
+    // 077.
+    var obj: Building? = Building()
+    obj!!.name = "서울시청"
+//    println(obj!!.name)
+    obj!!.print()
+
+    obj = null
+//    obj!!.print() // unresolved reference: print
+
+    // 079. Smart Casting
+    val number: Int? = null
+    val number2 = 1225
+
+    checkNull(number)
+    checkNull(number2)
+
+    println(number is Int?)
+
+    // 089. 동반자 객체
+    var aP = People.create()
+    var bP = People.create()
+    println(People.countCreated)
+
+    // 091. const
+    println(Foo.bar)
+    //Foo.bar = "noBar"
+}
+
+// 079
+fun checkNull(any: Any?) {
+    if (any == null) {
+        println("null이 들어왔습니다.")
+        return
+    }
+    println(any.toString())
 }
 
 // 061. Invoke operator
@@ -125,4 +181,35 @@ class Product(var id: Int, var name: String) {
         println(value)
         println("ID: ${id}\nNAME: ${name}")
     }
+}
+
+// 052. Member function
+class Building {
+    var name = ""   // 건물명
+    var date = ""   // 건축일자
+    var area = 0    // 면적
+
+    fun print() {
+        println("건물명: ${this.name}")
+        println("건축일: ${this.date}")
+        println("면적: ${this.area} ㎡")
+    }
+}
+
+// 086. Companion object
+class People private constructor() {
+    companion object {
+        fun create(): People {
+            countCreated += 1
+            return People()
+        }
+
+        var countCreated = 0
+            private set
+    }
+}
+
+// 091
+object Foo {
+    const val bar = "bar"
 }
