@@ -306,3 +306,114 @@
 		}
 	}
 	```
+
+#### 062 in 연산자
+- 어떤 값이 객체에 포함되었는지 조사할 때 사용
+- '표현식 in 표현식' 형태로 사용
+
+#### 063 멤버함수 중위 표기법
+- 멤버 함수 앞에 infix 를 붙이면 연산자처럼 호출
+- infix 가 붙은 멤버 함수는 매개변수가 하나만 가능
+
+
+	```kotlin
+	class Point(var x: Int = 0, var y: Int = 0)
+	{
+		// base를 원점으로 생각했을 때의 좌표를 반환한다.
+		infix fun from(base: Point): Point
+		{
+			return Point(x - base.x, y - base.y)
+		}
+	}
+	
+	fun main(args: Array<String>)
+	{
+		val pt = Point(3, 6) from Point(1, 1)
+		println(pt.x)
+		println(pt.y)
+	}
+	
+	```
+
+#### 064 상속 Inheritance
+- 상속은 이미 존재하는 클래스를 확장하여 새로운 클래스를 정의하는 OOP 기법
+- class BaseClass(…) : ExtendClass(…) 형태로 선언
+- 확장할 클래스를 슈퍼(부모)클래스, 확장된 클래스를 서브(자식)클래스로 명칭
+- 클래스는 한 개만 상속 가능
+
+#### 065 업캐스팅 Upcasting
+- 서브클래스 타입의 표현식은 슈퍼클래스 타입으로 가리킬 수 있음 - 업캐스팅
+- 슈퍼클래스에는 서브클래스의 모든 내용이 들어있으므로 서브클래스의 객체가 슈퍼클래스를 가리킨다고 해도 논리적으로 문제없음
+
+	```kotlin
+	open class Person(val name: String, val age: Int)
+	
+	class Student(name: String, age: Int, val id: Int) : Person(name, age)
+	
+	fun main(args: Array<String>)
+	{ 
+		val person: Person = Student("John", 32, 20200156) // 업캐스팅!
+	}
+	```
+
+#### 066 오버라이딩 Overriding
+- 슈퍼클래스의 멤버함수를 서브클래스에서 덮어버리고 새로운 기능으로 바꿔버리는 것
+- 오버라이딩할 슈퍼클래스에는 반드시 open을, 오버라이딩할 서브클래스 함수에는 override를 입력
+
+	```kotlin
+	open class AAA
+	{
+		open fun func() = println("AAA")
+	}
+	
+	class BBB : AAA()
+	{
+		override fun func()
+		{
+			super.func()
+			println("BBB")
+		}
+	}
+	
+	```
+
+#### 067 프로퍼티 오버라이딩
+- 생략!
+- 커스텀 프로퍼티를 권장하지 않음
+
+#### 069 클래스를 상속하는 객체
+- ‘object : 상속할 클래스(생성자 인수) { … }’ 형태로 생성
+
+#### 070 Any 클래스
+- 모든 클래스는 Any 클래스를 자동으로 상속
+- Any 클래스에는 equals, hashCode, toString 이라는 멤버함수 존재
+- 코틀린의 모든 클래스는 저 3개의 멤버 함수를 가짐
+
+#### 072 예외처리
+- try ~ catch (e: NumberFormatException) ~ finally 형태
+- 나머지 내용 생략
+
+#### 073 예외던지기
+- 우리가 직접 예외를 일으킬 수도 
+- 예외를 일으킬 때는 ‘throw 예외 객체’ 
+- 예외 객체는 Throwable 클래스를 상속하는 클래스로부터 생성된 객체여야 함
+
+#### 074 Nothing 타입
+- Nothing 은 특수한 표현식을 위한 특수 타입
+- 'throw 예외 객체' 도 표현식이며, 이 표현식은 Nothing 타입을 갖는다
+
+	```kotlin
+	fun throwing(): Nothing = throw Exception()
+	
+	fun main(args: Array<String>)
+	{
+		println("start")
+		val i: Int = throwing()
+		println(i)
+	}
+	```
+
+#### 075 Nullable 타입과 null
+- Nullable: null 을 지정할 수 있음을 뜻함
+- null: 참조 변수가 아무것도 가리키지 않음을 뜻함
+- 타입명 뒤에 ? 을 붙이면 변수를 Nullable 하게 생성

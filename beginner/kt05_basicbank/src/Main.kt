@@ -114,6 +114,9 @@ fun main() {
     // 061. Invoke operator
     var prd760921 = Product(760921, "HUGO")
     prd760921(108)
+
+    // 062. in operator
+    println('o' in "Hi, Kotlin!")
 }
 
 // 061. Invoke operator
