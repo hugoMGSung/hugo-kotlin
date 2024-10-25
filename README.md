@@ -203,3 +203,106 @@
 - 참조변수와 연결이 끊어진 객체는 가비지컬렉션에 의해 소멸됨
 - 일정조건(메모리 부족 등) 만족시만 발생함
 - 049 같은 경우라도 너무 걱정하지는 말것
+
+#### 051 ===, !==
+- 두 참조변수가 같은 객체를 가리키고 있는지 여부 조사
+
+#### 052 멤버함수
+- 클래스에 포함된 함수
+- 클래스 내의 멤버변수를 this 키워드로 접근(생략가능)
+
+#### 053 프로퍼티와 멤버함수의 매개변수 이름이 중복시
+- this 키워드 사용
+
+#### 054 생성자와 초기화 블록
+- 객체를 초기화 하는 특수함수
+- 객체가 생성되는 순간 호출
+
+#### 055 Init 블록 나누기
+- init 블록을 여러번 나눠쓸 수 있음
+
+#### 056 생성자와 프로퍼티 한번에 쓰기
+- 당연한것
+
+#### 057 보조생성자
+- 클래스 이름 바로 옆에 선언한 생성자 - 주 생성자
+- 보조 생성자는 파라미터 오버로딩 이어야 하고 주 생성자를 반드시 호출해야
+- constructor(...) : this(...) 형태로 호출
+
+#### 058 프로터리 Getter/Setter
+- Getter - 프로퍼티 값을 읽을때 호출되는 특수 함수
+- Setter - 프로퍼티 값을 저장할 때 호출하는 특수 함수
+
+- 기본적인 getName(), setName(name:String) 일반적인 방식과
+- 커스텀 방식 존재
+- 단, 이때는 val은 사용 불가, 무조건 var로 시작할 것
+
+	```kotlin
+	var name: String = name
+		get() = name
+		set(value) {
+			field = value
+		}
+
+	var age: Int = age
+		get() { return age + 1 }
+		set(value) {
+			field = value
+		}
+	```
+##### 되도록은 쓰지 말것
+
+#### 059 연산자 오버로딩
+- operator 키워드 사용
+
+	```kotlin
+	class Point(var x: Int = 0, var y: Int = 0)
+	{
+		operator fun plus(other: Point): Point {
+			return Point(x + other.x, y + other.y)
+		}
+
+		operator fun minus(other: Point): Point {
+			return Point(x - other.x, y - other.y)
+		}
+
+		operator fun times(number: Int): Point {
+			return Point(x * number, y * number)
+		}
+
+		operator fun div(number: Int): Point {
+			return Point(x / number, y / number)
+		}
+
+		// 좌표 값을 출력
+		fun print() {
+			println("x: $x, y: $y")
+		}
+	}
+	
+	```
+
+#### 060 번호붙은 접근 연산자(Indexed Access Operator)
+- [] 연산자는 객체의 일부 값을 추출해낼 때 사용
+- '표현식[표현식]' 형태로 사용
+- get 이라는 이름의 멤버 함수로 오버로딩
+
+#### 061 호출연산자 Invoke Operator
+- 객체명(파라미터) 형태로 호출
+- invoke() 라는 함수 선언
+
+	```kotlin
+	fun main() {
+		// 061. Invoke operator
+		var prd760921 = Product(760921, "HUGO")
+		prd760921(108)
+	}
+
+	// 061. Invoke operator
+	class Product(var id: Int, var name: String) {
+		operator fun invoke(value: Int) {
+			println(value)
+			println("ID: ${id}\nNAME: ${name}")
+		}
+	}
+	```
