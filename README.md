@@ -43,6 +43,9 @@
 
 #### 003 변수
 - var 와 val로 선언
+- val은 한번만 선언 할당할 수 있음
+- var로 선언한 변수는 나중에 다시 할당 가능
+- val보다는 var가 더 효율적임
 
 	```kotlin
 	// 003 Variable
@@ -691,3 +694,86 @@
 #### 127 Class Delegation 클래스 위임
 - 인터페이스의 구현을 다른 객체에 위임할 수 있음
 - 클래스 선언시 'class 클래스명 : 인터페이스명 by 위임할 객체 {...}' 로 작성
+
+### kt07_basicbank
+
+#### 128 Pair class
+- 두 변수를 하나로 묶기
+
+#### 129 to 확장함수
+- 두 값을 간단히 Pair로 묶기
+
+#### 130 Triple class
+- 세 변수를 하나로 묶기
+
+### kt08_basicbank
+
+#### 131 Comparable 인터페이스 
+- 클래스를 비교 가능하게
+
+#### 132 ClosedRange Interface
+- value가 구간에 속하는지 구간이 비어있는지 확인하는 인터페이스
+
+#### 133~154 까지
+- 소스에 설명
+
+### kt09_basicbank
+
+#### 155 String class
+- 내용및 코드 생략
+
+#### 157 StringBuilder 클래스
+- 문자열 덧붙이기 편리한 클래스
+
+#### 158 Regex 클래스 - 정규식
+- Regex 클래스 - 정규식 다루기
+
+- constructor(pattern:String) //정규식 문자열을 받는 생성자
+- infix fun matches(input:CharSequence):Boolean //input이 정규식에 매칭되는지
+- fun replace(input:CharSequence, replacement:String):String //input 중 정규식에 매칭되는 부분을 replace로 바꿈
+
+#### 160 Run 확장함수
+- 코드 중복을 줄이는 확장함수
+
+#### 163 apply 함수
+- 객체 생성과 초기화 코드를 하나로 묶어주는 기능
+
+	```kotlin
+	Person().apply {
+            this.name = "Alan"
+            this.money = 70
+        }
+	```
+
+### 여기까지 공부하며 내린 결론
+- 127번 이후는 대부분 내장클래스 설명이 대부분임
+- 시간을 내서 200번까지 한번 훑어보면 될 듯
+
+
+#### 164 also 함수
+- 객체 생성 및 초기화를 하나의 표현식으로 압축
+
+#### 184까지
+- 내용 생략
+
+### kt10_filetest
+
+#### 185 파일입출력
+- 자바 표준 라이브러리에 의존하며 코틀린 확장함수가 보조임
+- JVM에 의존성이 생김
+
+#### 186 디렉토리 순회
+- FileTreeWalk 클래스로 디렉토리 순회
+
+### kt11_threadtest
+
+#### 187~189 thread 관련
+- JVM 스레드를 생성하여 JVM에 의존성이 생김
+
+### kt12_kotlinAndJava
+
+#### 190~196 코틀린에서 자바 코드 접근
+
+### kt13_kotlinAndJava
+
+#### 196~200 자바에서 코틀린 코드 접근
