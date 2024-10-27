@@ -3,3 +3,6 @@
 
 ## 첫번째 학습
 [열기](https://github.com/hugoMGSung/hugo-kotlin/blob/main/beginner/README.md)
+
+## 두번째 학습
+[열기](https://github.com/hugoMGSung/hugo-kotlin/blob/main/google/README.md)
