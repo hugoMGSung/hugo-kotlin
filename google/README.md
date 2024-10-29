@@ -15,7 +15,7 @@
 ##### 안드로이드 플랫폼은 리눅스 OS 상에서 상호작용하면서 동작
 - 안드로이드 플랫폼
 
-    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0002.png" width="730">
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0002.png" width="600">
 
     - 출처 : https://developer.android.com/guide/platform?hl=ko
 
