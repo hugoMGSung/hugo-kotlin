@@ -72,6 +72,34 @@
 
         <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0003.png" width="600">
 
+    2. Empty Activity 선택 
+    3. Configure Your Project 입력
+
+        <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0004.png" width="800">
+
+    4. SDK Component Installer 확인
+
+        <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0005.png" width="800">
+
+    5. 화면오픈 후
+    6. 메뉴 > 도구 > Android > 장치 관리자(Device Manager) 클릭
+    7. Create Virtual Device 클릭
+
+        <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0006.png" width="800">
+
+    8. 장치 관리자에서 디바이스 실행
+
+
+        <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0007.png" width="400">
+
+    9. 메뉴 상단 app > 플레이버튼 클릭해서 앱 실행
+
+#### 다음 진행(Android Studio)
+- 진행 순서
+    1. 실행 후 Gradle 설정 필요
+        - IntelliJ의 Gradle 사용자홈 (보통 C:\Users\사용자명\.gradle) 확인
+    2. 
+
 
 ### 안드로이드 화면구성
 
