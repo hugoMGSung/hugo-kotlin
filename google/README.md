@@ -297,11 +297,77 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0011.png" width="500">
 
     - RelativeLayout, GridLayout은 안드로이드 스튜디오 3.1 이상부터는 업데이트 되지 않음
+    - ContraintLayout - 드래그 앤 드랍으로 각각 화면의 요소들을 원하는 곳에 배치할 수 있는 레이아웃
+    - LinearLayout - 위젯 가로 또는 세로 한 줄로 배치하는 레이아웃
+    - FrameLayout - 입력되는 위젯을 중첩해서 사용하기 위한 레이아웃
+
 
 - 레이아웃 창 보는 방법
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0012.png" width="820">
 
     - 오른쪽 상단 아이콘으로 Code, Split, Design 순으로 변환
+
+##### 위젯
+- 3.1 이후부터 텍스트, 버튼. 위젯으로 세분화
+    - Common - TextView, Button, ImageView, RecyclerView 등 많이 사용하는 위젯 묶음
+    - Text - TextView, Plain Text 등 텍스트 종류 위젯 
+    - Buttons - Button, ImageButton 등 버튼 종류
+    - Widgets - View, ProgressBar 등 화면 그리기 위젯 묶음
+    - Layouts - 자주 사용하는 레이아웃 묶음
+    - Containers - 위젯 담는 컨테이너 위젯 묶음
+    - Helpers - 개발에 도움을 주는 위젯 
+    - Google - 지도와 구글애드 등 구글관련 위젯
+    - Legacy - 레가시로 가장 오래된 위젯 종류
+
+##### 위젯 요소
+- text - 텍스트 입력
+- textAppearance 아래
+    - fontFamily - 글자체 확인 및 변경
+    - typeface - sans, serif, normal 등 영어체 타입 변경
+    - textSize - sp 단위로 텍스트 크기 변경 (Scale-independent Pixels) 약어
+    - textColor - 글자 색
+    - textStyle - Bold, Italic
+    - textAlignment - left, center, right 등 
+- 엄청나게(!) 많은 Attributes 들이 나열되어 있음
+
+- inputType - 입력타입 지정
+    - textUri, textEmailAddress, textPassword, textVisiblePassword, number, phone, date 등
+
+- imeOptions - 입력완료 후 실행할 이벤트 설
+    - normal, actionUnspecified, actionGo, actionSearch, actionSend, actionsNext, actionDone, actionPrevious
+
+##### 이미지버튼
+- 이미지 크기 설정 - scaleType
+    - matrix, fitXY, fitStart, fitCener, fitEnd, center, centerCrop, centerInside
+
+##### 라디오그룹, 라디오버튼
+
+##### 체크박스
+
+##### 토글버튼, 스위치, 이미지뷰
+
+##### 프로그래스바
+
+##### 시크바
+
+##### 레이팅바
+
+#### drawable 단위
+- 이미지 리소스인 drawable, 앱 아이콘에 사용되는 mipmap, strings를 이용한 다국어 처리 학습
+    - 스마트폰마다 가로세로 화소(픽셀)의 개수가 다르기 때문에 화소 개념인 dp로 사이즈 표시
+    - dp는 화면 밀도인 DPI에 따라서 실제 픽셀로 변환되는 크기가 변경 drawable 또한 DPI에 따라 다른 이름의 디렉터리 사용
+
+- DPI(Dots Per Inch) - 가로세로 1인치(2.54cm) 정사각형 공간에 들어있는 픽셀의 숫자
+
+    |표현|1인차 내 화소수|비고|
+    |:---|:---:|---:|
+    |ldpi|120|미사용|
+    
+
+    
+    
+
+
 
 ### 구글 플레이스토어 작업
