@@ -373,6 +373,14 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0016.png" width="800">
 
 ##### 프로그래스바
+1. View Binding 설정: ActivityMainBinding을 사용해 View Binding을 초기화
+2. increaseButton 클릭 이벤트:
+    - increaseProgress() 함수가 호출되어, 버튼을 누를 때마다 progressStatus가 10씩 증가.
+3. increaseProgress 함수:
+    - ProgressBar와 TextView를 업데이트
+    - progressStatus가 100% 미만일 때만 증가하도록 제한하여 최대값을 넘어가지 않도록 설정
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0017.png" width="400">
 
 ##### 시크바
 
