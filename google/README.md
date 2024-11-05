@@ -342,6 +342,14 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
     - matrix, fitXY, fitStart, fitCener, fitEnd, center, centerCrop, centerInside
 
 ##### 라디오그룹, 라디오버튼
+- setOnCheckedChangeListener 
+    - RadioGroup 에 리스너를 추가하여 선택된 라디오버튼의 변경을 감지
+    - checkedId는 현재 선택된 라디오버튼의 ID
+- 선택된 라디오버튼의 텍스트 가져오기
+    - findViewById로 선택된 라디오 버튼을 RadioButton으로 캐스팅하여 text를 수신
+    - 가져온 텍스트를 TextView에 표시
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0014.png" width="400">
 
 ##### 체크박스
 

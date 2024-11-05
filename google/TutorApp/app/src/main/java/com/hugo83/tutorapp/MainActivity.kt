@@ -1,7 +1,9 @@
 package com.hugo83.tutorapp
 
+import android.app.Activity
 import android.os.Bundle
 import android.util.Log
+import android.widget.RadioButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -9,23 +11,23 @@ import androidx.core.view.WindowInsetsCompat
 import com.hugo83.tutorapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding // View Binding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        var mine = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
 
         enableEdgeToEdge()
         //setContentView(R.layout.activity_main)
-        setContentView(mine.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        setContentView(binding.root)
 
-        mine.button.setOnClickListener {
-            mine.textView.text = "Hi, Kotlin"
-            Log.d("동작", "버튼 클릭했습니다.")
+        // RadioGroup에 리스너 추가
+        binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
+            // 선택된 RadioButton 가져오기
+            val selectedRadioButton = findViewById<RadioButton>(checkedId)
+            // TextView에 선택된 옵션 표시
+            binding.selectedOptionTextView.text = "선택된 옵션: ${selectedRadioButton.text}"
         }
     }
 }
