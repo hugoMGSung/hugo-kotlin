@@ -147,9 +147,140 @@
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0008.png" width="800">
 
+#### 코틀린에 맞게 재구현
 
-### 안드로이드 화면구성
+##### 새 프로젝트 생성
+1. 새 프로젝트 시작:
+    - Android Studio를 열고, **"New Project"**를 선택하세요.
+
+2. 프로젝트 템플릿 선택:
+    - Phone and Tablet > Empty Views Activity 템플릿을 선택하는 것이 좋습니다. 기본적인 앱 구조를 갖춘 상태로 시작할 수 있습니다.
+
+3. 앱 세부 정보 설정:
+    - Name: 앱 이름을 입력합니다. 여기서는 TutorialApp 으로 입력했습니다,
+    - Package Name: 앱의 고유 패키지 이름을 입력합니다 (예: com.hugo83.tutorialapp).
+    - Save location: 프로젝트를 저장할 위치를 지정합니다.
+    - Language: "Kotlin"을 선택합니다.
+    - Minimum API Level: 앱이 지원할 Android 버전을 설정합니다. 일반적으로 API 21 (Lollipop) 정도가 좋은 선택입니다.
+    - Build configuration language : Kotlin DSL은 최신, Groovy DSL은 예전 방식입니다.
+
+4. Finish:
+    - 설정을 마친 후 "Finish"를 클릭하면 프로젝트가 생성됩니다.
+
+##### 앱 구조이해
+Android Studio가 생성한 기본 프로젝트 구조를 이해해보겠습니다.
+
+- MainActivity.kt: 코틀린으로 작성된 메인 액티비티 파일입니다. 안드로이드 앱의 첫 화면을 담당하는 클래스입니다.
+- res/layout/activity_main.xml: 메인 화면의 UI 레이아웃 파일입니다.
+- AndroidManifest.xml: 앱의 주요 설정 파일로, 각 액티비티와 앱 권한 등을 정의합니다.
+
+##### 간단한 UI 추가
+activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
+
+1. 디자인 모드와 코드 모드:
+    - Android Studio에서 res/layout/activity_main.xml 파일을 열면 "Design"과 "Code" 두 가지 모드가 있습니다. Design 모드에서 드래그 앤 드롭으로 UI를 추가할 수 있습니다.
+
+2. 텍스트 추가:
+    - Design 모드에서 "TextView"를 찾아 드래그해 화면 중앙에 놓습니다.
+    - TextView를 선택한 후, "Attributes" 창에서 text 속성을 "Hello, Kotlin!"으로 설정합니다.
+
+3. 버튼 추가:
+    - Design 모드에서 "Button"을 찾아 드래그해 화면 아래쪽에 놓습니다.
+    - Button의 text 속성을 "Click Me"로 설정합니다.
+
+    ```xml
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click Me"
+            android:layout_below="@id/textView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" />
+
+    </RelativeLayout>
+    ```
+
+##### 기능 추가
+추가 설정이 필요합니다.
+
+1. build.gradle에 아래의 코드를 추가합니다. android { ... } 사이에 입력합니다.
+
+    ```groovy
+    buildFeatures {
+        viewBinding = true
+    }
+    ```
+
+2. Sync now를 클릭합니다.
+
+3. MainActivity.kt 를 아래와 같이 변경합니다. import 네임스페이스를 신경씁니다.
+
+    ```kotlin
+    class MainActivity : AppCompatActivity() {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+
+            var mine = ActivityMainBinding.inflate(layoutInflater)
+            /* 안드로이드 앱에서 Edge-to-Edge 디자인을 적용하기 위해 사용하는 함수
+                앱의 UI를 화면 가장자리까지 확장하여 시스템 내비게이션 바나 상태 표시줄과 겹치는 부분까지 콘텐츠가 표시되도록 하는 것
+                안드로이드 10(API 29)부터 도입
+            */
+            enableEdgeToEdge()
+            //setContentView(R.layout.activity_main) // res/layout/activity_main.xml을 사용한다
+            setContentView(mine.root)
+
+    //        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+    //            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+    //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+    //            insets
+    //        }
+            // 굳이 위의 소스 부분이 문제를 일으키진 않는다. 현재까진...
+
+            mine.button.setOnClickListener {
+                mine.textView.text = "Hello, Kotlin!!!!"
+            }
+        }
+    }
+    ```
+
+4. Run을 실행하면 두 가지 이슈 발생 - AAR 메다데이터 검사시
+    - 첫번째 : 종속성 'androidx.core:core-ktx:1.15.0'은 이에 종속된 라이브러리와 애플리케이션이 Android API의 버전 35 이상에 대해 컴파일해야 한다고 나옴. build.gradle의 compileSdk를 35로 변경해야함
+    - 두번째 : 역시 같은 내용임
+
+    - 이하 아래의 영어로 된 부분이 링크로 걸려있음. 이를 클릭하면 자동으로 변경
+        - Update minCompileSdk in modules with dependencies that require a higher minCompileSdk.
+
+5. 재실행
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0009.png" width="800">
 
 ### 안드로이드 프로그래밍
+
+#### 로그 활용
+- 필요시 마다 Log.d() 활용
+    - 디버깅을 줄일 수 있음(체험상)
+
+- 아래의 로그캣(고양이 모양 아이콘 클릭)
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0010.png" width="820">
 
 ### 구글 플레이스토어 작업
