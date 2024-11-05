@@ -283,4 +283,17 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0010.png" width="820">
 
+- 로그 종류는 Log.v(), d(), i(), w(), e() 등 존재하지만
+    - d() - debug
+    - w() - warning
+    - e() - error 정도만 사용하면 될 것
+
+### 위젯 / 리소스
+
+#### 레이아웃
+- 프로젝트 생성 후 기본화면이 구성되는 activity_main.xml 파일이 레이아웃을 구성하는 UI
+- 레이아웃 종류
+    
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0011.png" width="650">
+
 ### 구글 플레이스토어 작업
