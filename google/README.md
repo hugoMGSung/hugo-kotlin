@@ -294,7 +294,7 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
 - 프로젝트 생성 후 기본화면이 구성되는 activity_main.xml 파일이 레이아웃을 구성하는 UI
 - 레이아웃 종류
     
-    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0011.png" width="650">
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0011.png" width="500">
 
     - RelativeLayout, GridLayout은 안드로이드 스튜디오 3.1 이상부터는 업데이트 되지 않음
 
