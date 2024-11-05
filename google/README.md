@@ -383,8 +383,17 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0017.png" width="400">
 
 ##### 시크바
+- 사용자가 슬라이더를 움직여 특정 값을 선택할 수 있도록 하는 Android UI 위젯
+
+1. View Binding 설정: ActivityMainBinding을 사용해 View Binding을 초기화
+2. SeekBar Change Listener 설정:
+    - onProgressChanged 메서드에서 SeekBar의 값이 변경될 때마다 TextView를 업데이트하여 현재 값을 표시
+    - onStartTrackingTouch와 onStopTrackingTouch는 사용자가 SeekBar를 터치하거나 손을 뗄 때 호출. 필요 시 추가 동작을 정의가능
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0018.png" width="400">
 
 ##### 레이팅바
+
 
 #### drawable 단위
 - 이미지 리소스인 drawable, 앱 아이콘에 사용되는 mipmap, strings를 이용한 다국어 처리 학습

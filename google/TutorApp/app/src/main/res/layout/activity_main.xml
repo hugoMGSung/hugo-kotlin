@@ -14,30 +14,20 @@
         android:layout_marginTop="30sp"
         android:textSize="18sp" />
 
-    <!-- 텍스트뷰: 프로그래스 상태 표시 -->
+    <!-- 텍스트뷰: 시크바 값 표시 -->
     <TextView
-        android:id="@+id/progressTextView"
+        android:id="@+id/seekBarValueTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Progress: 0%"
+        android:text="SeekBar Value: 0"
         android:textSize="18sp"
         android:layout_marginBottom="16dp" />
 
-    <!-- 프로그래스바 -->
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="@android:style/Widget.DeviceDefault.ProgressBar.Horizontal"
+    <!-- 시크바 -->
+    <SeekBar
+        android:id="@+id/seekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:progress="0"
-        android:max="100"
-        android:layout_marginBottom="16dp" />
-
-    <!-- 진행 버튼 -->
-    <Button
-        android:id="@+id/increaseButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Increase Progress" />
+        android:max="100" />
 
 </LinearLayout>
