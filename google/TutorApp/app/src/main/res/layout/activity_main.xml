@@ -5,41 +5,38 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- 텍스트뷰: 선택된 옵션을 표시 -->
+    <!-- 텍스트뷰: 선택된 항목을 표시 -->
     <TextView
-        android:id="@+id/selectedOptionTextView"
+        android:id="@+id/selectedOptionsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Selected Option:"
+        android:text="Selected Options:"
         android:layout_marginTop="30sp"
         android:textSize="18sp" />
 
-    <!-- 라디오그룹: 옵션 선택을 위한 라디오버튼 그룹 -->
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="match_parent"
+    <!-- 체크박스들 -->
+    <CheckBox
+        android:id="@+id/checkBoxOption1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp">
+        android:text="Option 1" />
 
-        <!-- 각 라디오버튼 -->
-        <RadioButton
-            android:id="@+id/radioOption1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option 1" />
+    <CheckBox
+        android:id="@+id/checkBoxOption2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Option 2" />
 
-        <RadioButton
-            android:id="@+id/radioOption2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option 2" />
+    <CheckBox
+        android:id="@+id/checkBoxOption3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Option 3" />
 
-        <RadioButton
-            android:id="@+id/radioOption3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option 3" />
-    </RadioGroup>
+    <CheckBox
+        android:id="@+id/checkBoxOption4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Option 4" />
 
 </LinearLayout>

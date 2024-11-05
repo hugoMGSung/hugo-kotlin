@@ -352,6 +352,14 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0014.png" width="400">
 
 ##### 체크박스
+- View Binding 설정: ActivityMainBinding을 사용해 View Binding을 초기화
+- 체크박스 리스트 생성
+    - checkBoxes 리스트에 각 체크박스를 넣고, 각 체크박스에 setOnCheckedChangeListener를 설정하여 상태가 변경될 때마다 updateSelectedOptions()가 호출됨
+- updateSelectedOptions 함수
+    - 각 체크박스가 선택되어 있는지 확인하고, 선택된 항목의 텍스트를 selectedOptions 리스트에 추가
+    - selectedOptions 리스트의 값을 콤마로 구분하여 TextView에 표시
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0015.png" width="400">
 
 ##### 토글버튼, 스위치, 이미지뷰
 
