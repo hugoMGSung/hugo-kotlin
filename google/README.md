@@ -369,11 +369,37 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
     |xxhdpi|480|1dp = 3pixel|
     |xxxhdpi|640|1dp = 4pixel|
     
+##### mipmap
+- 앱의 아이콘 사용용도로 mipmap 디렉토리 제공
 
+##### strings
+- strings.xml을 Translations Editor를 통해서 관리
+    - 다국어 처리
 
+#### 안드로이드 컴포넌트
+- 컴포넌트는 독립적인 생명주기에 의해 실행
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0013.png" width="820">
     
-    
 
+    1. Activity - 화면 UI 담당 컴포넌트
+    2. Broadcast Receiver - 시스템/사용자가 발생하는 메시지 수신 컴포넌트
+    3. Service - 백그라운드 코드 처리를 담당하는 컴포넌트
+    4. Content Provider - 앱 간의 데이터 공유를 위한 컴포넌트
+    5. Intent - 1 ~ 3의 컴포넌트를 실행하기 위해 시스템에 전달되는 메시지 도구
+    6. Content Resolver - Content Provider가 제동하는 데이터를 사용하기 위한 도구
 
+##### 컨텍스트
+- 시스템을 사용하기 위한 프로퍼티와 메서드가 담겨있는 클래스. 대부분 컴포넌트 실행과 함께 생성, 생성된 컴포넌트가 가지고 있는 메서드를 호출해서 각각의 도구들을 사용
+
+##### 인텐트
+- 안드로이드가 전달받은 인텐트로 해석하고 실행하여 안드로이드 앱을 진행
+- MainActivity 는 특별한 설정없이도 안드로이드에 자동으로 인텐트가 등록됨. 이외 액티비티를 사용할 때는 인텐트에 새 액티비티의 이름을 담아서 시스템에 전달
+
+    1. 실행할 대상 액티비티 이름과 전달할 데이터를 담아서 인텐트를 생성
+    2. startActivity() 메서드에 담아서 호출 -> 액티비티 관리자가 수신
+    3. 액티비지 관리자는 인텐트를 분석 지정 액티비티 실행
+    4. 타겟 액티비티까지 전달
+    5. 전달받은 인텐트에 데이터를 가져와 사용
 
 ### 구글 플레이스토어 작업
