@@ -362,6 +362,15 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0015.png" width="400">
 
 ##### 토글버튼, 스위치, 이미지뷰
+1. View Binding 설정: ActivityMainBinding을 사용해 View Binding을 초기화
+2. 상태 리스너 설정:
+    - setOnCheckedChangeListener를 사용하여 ToggleButton과 Switch의 상태가 변경될 때 updateStatus()가 호출되도록 함
+3. updateStatus 함수:
+    - ToggleButton과 Switch의 상태에 따라 텍스트와 이미지를 업데이트
+    - 두 버튼이 모두 ON일 때 특정 이미지를 표시하고, 그렇지 않으면 다른 이미지를 표시
+
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0016.png" width="800">
 
 ##### 프로그래스바
 

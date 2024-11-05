@@ -7,36 +7,45 @@
 
     <!-- 텍스트뷰: 선택된 항목을 표시 -->
     <TextView
-        android:id="@+id/selectedOptionsTextView"
+        android:id="@+id/titleView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Selected Options:"
+        android:text="따라하기"
         android:layout_marginTop="30sp"
         android:textSize="18sp" />
 
-    <!-- 체크박스들 -->
-    <CheckBox
-        android:id="@+id/checkBoxOption1"
+    <!-- 텍스트뷰: 상태 표시 -->
+    <TextView
+        android:id="@+id/statusTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Option 1" />
+        android:text="상태: "
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
 
-    <CheckBox
-        android:id="@+id/checkBoxOption2"
+    <!-- 토글 버튼 -->
+    <ToggleButton
+        android:id="@+id/toggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Option 2" />
+        android:textOn="Toggle On"
+        android:textOff="Toggle Off"
+        android:layout_marginBottom="16dp" />
 
-    <CheckBox
-        android:id="@+id/checkBoxOption3"
+    <!-- 스위치 -->
+    <Switch
+        android:id="@+id/switchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Option 3" />
+        android:text="Switch"
+        android:layout_marginBottom="16dp" />
 
-    <CheckBox
-        android:id="@+id/checkBoxOption4"
+    <!-- 이미지 뷰 -->
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Option 4" />
+        android:src="@drawable/ic_launcher_foreground"
+        android:contentDescription="Image View" />
 
 </LinearLayout>

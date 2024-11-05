@@ -22,30 +22,33 @@ class MainActivity : AppCompatActivity() {
         //setContentView(R.layout.activity_main)
         setContentView(binding.root)
 
-        // 체크박스들을 클릭할 때마다 선택된 항목을 업데이트
-        val checkBoxes = listOf(
-            binding.checkBoxOption1,
-            binding.checkBoxOption2,
-            binding.checkBoxOption3,
-            binding.checkBoxOption4
-        )
-
-        checkBoxes.forEach { checkBox ->
-            checkBox.setOnCheckedChangeListener { _, _ ->
-                updateSelectedOptions()
-            }
+        // ToggleButton 상태 리스너 설정
+        binding.toggleButton.setOnCheckedChangeListener { _, isChecked ->
+            updateStatus()
         }
+
+        // Switch 상태 리스너 설정
+        binding.switchButton.setOnCheckedChangeListener { _, isChecked ->
+            updateStatus()
+        }
+
+        // 초기 상태 업데이트
+        updateStatus()
     }
 
-    // 선택된 체크박스를 텍스트 뷰에 표시하는 함수
-    private fun updateSelectedOptions() {
-        val selectedOptions = mutableListOf<String>()
+    // ToggleButton 및 Switch 상태에 따라 이미지와 텍스트를 업데이트하는 함수
+    private fun updateStatus() {
+        val toggleState = if (binding.toggleButton.isChecked) "ON" else "OFF"
+        val switchState = if (binding.switchButton.isChecked) "ON" else "OFF"
 
-        if (binding.checkBoxOption1.isChecked) selectedOptions.add(binding.checkBoxOption1.text.toString())
-        if (binding.checkBoxOption2.isChecked) selectedOptions.add(binding.checkBoxOption2.text.toString())
-        if (binding.checkBoxOption3.isChecked) selectedOptions.add(binding.checkBoxOption3.text.toString())
-        if (binding.checkBoxOption4.isChecked) selectedOptions.add(binding.checkBoxOption4.text.toString())
+        // 상태 텍스트 업데이트
+        binding.statusTextView.text = "Toggle: $toggleState, Switch: $switchState"
 
-        binding.selectedOptionsTextView.text = "선택된 체크박스값: ${selectedOptions.joinToString(", ")}"
+        // 이미지 변경 (두 버튼이 모두 ON일 때만 이미지 변경)
+        if (binding.toggleButton.isChecked && binding.switchButton.isChecked) {
+            binding.imageView.setImageResource(R.drawable.ic_launcher_foreground) // 이미지 예시
+        } else {
+            binding.imageView.setImageResource(R.drawable.ic_launcher_background) // 다른 이미지 예시
+        }
     }
 }
