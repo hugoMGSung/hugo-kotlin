@@ -296,4 +296,12 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
     
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0011.png" width="650">
 
+    - RelativeLayout, GridLayout은 안드로이드 스튜디오 3.1 이상부터는 업데이트 되지 않음
+
+- 레이아웃 창 보는 방법
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0012.png" width="820">
+
+    - 오른쪽 상단 아이콘으로 Code, Split, Design 순으로 변환
+
 ### 구글 플레이스토어 작업
