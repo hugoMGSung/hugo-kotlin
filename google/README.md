@@ -510,6 +510,7 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
  
 ##### Spinner - RecyclerView
 - 여러개 목록 중 하나를 선택하는 도구 - RecyclerView(확장된 도구)
+[소스](https://github.com/hugoMGSung/hugo-kotlin/tree/09.RecyclerView/google/RecyclerViewTest)
 
 1. 프로젝트 생성
 2. build.gradle 설정
