@@ -455,6 +455,47 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
     5. 전달받은 인텐트에 데이터를 가져와 사용
 
 ##### 인텐트 사용 구현
+1. app > kotlin+java > New > Activity > Empty Views Activity 선택
+2. Activity Name을 입력 - SubActivity
+3. Generate a Layout File 체크(기본)
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0020.png" width="820">
+
+    - 텍스트와 버튼 추가(생략)
+
+4. activity_main.xml 수정
+    - TextView text -> **메인 액티비티**로 변경
+    - 버튼 추가
+
+5. MainActivity.kt 수정
+    - setContentView(...) 아래 추가
+    - btnChange 온클릭리스너 추가
+
+    ```kotlin
+    var intent = Intent(this, SubActivity::class.java)
+
+    // ...
+    bind.btnChange.setOnClickListner { startActivity(intent) }
+    ```
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0021.png" width="820">
+
+
+6. 데이터 전달
+    - MainActivity.kt 소스 추가
+
+    ```kotlin
+    intent.putExtra("main1", "Extra Data")
+    intent.putExtra("main2", 2025)
+    ```
+
+    - activity_sub.xml에 텍스트 위젯 추가 및 SubActivity.kt 소스 추가
+
+    ```kotlin
+
+    ```
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0022.png" width="820">
 
 
 ### 구글 플레이스토어 작업
