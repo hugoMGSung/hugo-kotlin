@@ -455,6 +455,7 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
     5. 전달받은 인텐트에 데이터를 가져와 사용
 
 ##### 인텐트 사용 구현
+[소스](https://github.com/hugoMGSung/hugo-kotlin/tree/08.IntentAndExtradatas/google/IntentTest)
 1. app > kotlin+java > New > Activity > Empty Views Activity 선택
 2. Activity Name을 입력 - SubActivity
 3. Generate a Layout File 체크(기본)
