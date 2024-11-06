@@ -398,7 +398,11 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0018.png" width="400">
 
 ##### 레이팅바
+1. View Binding 설정: ActivityMainBinding을 사용하여 View Binding을 초기화
+2. RatingBar Change Listener 설정:
+    - onRatingBarChangeListener를 설정하여 사용자가 RatingBar의 값을 변경할 때마다 현재 별점을 TextView에 업데이트.
 
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0019.png" width="400">
 
 #### drawable 단위
 - 이미지 리소스인 drawable, 앱 아이콘에 사용되는 mipmap, strings를 이용한 다국어 처리 학습
@@ -448,5 +452,8 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
     3. 액티비지 관리자는 인텐트를 분석 지정 액티비티 실행
     4. 타겟 액티비티까지 전달
     5. 전달받은 인텐트에 데이터를 가져와 사용
+
+##### 인텐트 사용 구현
+
 
 ### 구글 플레이스토어 작업
