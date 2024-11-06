@@ -398,6 +398,7 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0018.png" width="400">
 
 ##### 레이팅바
+[소스](https://github.com/hugoMGSung/hugo-kotlin/tree/07.RatingBar/google/TutorApp)
 1. View Binding 설정: ActivityMainBinding을 사용하여 View Binding을 초기화
 2. RatingBar Change Listener 설정:
     - onRatingBarChangeListener를 설정하여 사용자가 RatingBar의 값을 변경할 때마다 현재 별점을 TextView에 업데이트.
