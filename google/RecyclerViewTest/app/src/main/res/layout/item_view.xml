@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+<!--    android:orientation="horizontal" = 가로방향-->
+
+    <!-- 순번 텍스트뷰 -->
+    <!-- android:layout_width="0dp" 과
+         android:layout_weight="1" 를 지정하면 전체 너비 균등하게
+         android:layout_weight="2"로 지정하면 1보다 더 넓은 공간차지
+         android:gravity="center" 텍스트가 중앙에 정렬되도록
+    -->
+    <TextView
+        android:id="@+id/itemNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.6"
+        android:text="Number"
+        android:textSize="14sp"
+        android:gravity="left" />
+
+    <!-- 제목 텍스트뷰 -->
+    <TextView
+        android:id="@+id/itemTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="Title"
+        android:textSize="14sp"
+        android:gravity="left" />
+
+    <!-- 날짜 텍스트뷰 -->
+    <TextView
+        android:id="@+id/itemDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Date"
+        android:textSize="14sp"
+        android:gravity="center" />
+
+</LinearLayout>

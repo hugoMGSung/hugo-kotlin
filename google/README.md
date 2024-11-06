@@ -236,17 +236,19 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
 
     ```kotlin
     class MainActivity : AppCompatActivity() {
+        private lateinit var bind: ActivityMainBinding
+
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
 
-            var mine = ActivityMainBinding.inflate(layoutInflater)
+            bind = ActivityMainBinding.inflate(layoutInflater)
             /* 안드로이드 앱에서 Edge-to-Edge 디자인을 적용하기 위해 사용하는 함수
                 앱의 UI를 화면 가장자리까지 확장하여 시스템 내비게이션 바나 상태 표시줄과 겹치는 부분까지 콘텐츠가 표시되도록 하는 것
                 안드로이드 10(API 29)부터 도입
             */
             enableEdgeToEdge()
             //setContentView(R.layout.activity_main) // res/layout/activity_main.xml을 사용한다
-            setContentView(mine.root)
+            setContentView(bind.root)
 
     //        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
     //            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -255,8 +257,8 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
     //        }
             // 굳이 위의 소스 부분이 문제를 일으키진 않는다. 현재까진...
 
-            mine.button.setOnClickListener {
-                mine.textView.text = "Hello, Kotlin!!!!"
+            bind.button.setOnClickListener {
+                bind.textView.text = "Hello, Kotlin!!!!"
             }
         }
     }
@@ -498,5 +500,27 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0022.png" width="820">
 
+##### 액티비티 생명주기
+1. onCreate() - 액티비티 생성(핵심)
+2. onStart() - 화면 표시
+3. onResume() - 실제 액티비티가 실행중
+4. onPause() - 화면이 가려짐
+5. onStop() -  화면이 없어짐
+6. onDestroy() - 종료
+ 
+##### Spinner - RecyclerView
+- 여러개 목록 중 하나를 선택하는 도구 - RecyclerView(확장된 도구)
+
+1. 프로젝트 생성
+2. build.gradle 설정
+3. MainActivity.kt ActivityMainBinding으로 변경
+4. activity_main.xml 파일 LinearLayout과 RecyclerView 코드 추가
+5. layout > New > XML > Layout XML file 선택, item_view.xml로 입력
+6. item_view.xml 코드 추가
+7. ItemData.kt 데이터클래스 정의
+8. RecyclerView의 데이터 관리 및 아이템 클릭 처리하는 어댑터 클래스 ItemAdapter.kt 정의
+9. MainActivity.kt 수정 - 100개의 랜덤 데이터를 생성하고 Adapter에 전달
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0023.png" width="400">
 
 ### 구글 플레이스토어 작업
