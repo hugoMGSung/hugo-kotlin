@@ -61,7 +61,6 @@
             <td>GET_ACCOUNTS</td>
             <td>계정정보 가져오기</td>
         </tr>
-
         <tr>
             <td rowspan="2">LOCATION</td>
             <td>ACCESS_FINE_LOCATION</td>
@@ -72,13 +71,11 @@
             <td>ACCESS_COARSE_LOCATION</td>
             <td>위치정보 사용</td>
         </tr>
-
         <tr>
             <td>MICROPHONE</td>
             <td>RECORD_AUDIO</td>
             <td>마이크 녹음</td>
         </tr>
-
         <tr>
             <td rowspan="9">PHONE</td>
             <td>READ_PHONE_STATE</td>
@@ -124,7 +121,6 @@
             <td>PROCESS_OUTGOING_CALLS</td>
             <td>통화 관련 Broadcast 수신</td>
         </tr>
-
         <tr>
             <td>SENSORS</td>
             <td>BODY_SENSORS</td>
@@ -156,7 +152,6 @@
             <td>RECEIVE_MMS</td>
             <td>MMS 받기</td>
         </tr>
-
         <tr>
             <td rowspan="2">STORAGE</td>
             <td>READ_EXTERNAL_STORAGE</td>
