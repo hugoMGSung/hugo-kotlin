@@ -587,4 +587,4 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0026.png" width="800">
 
-### 구글 플레이스토어 작업
+[다음](https://github.com/hugoMGSung/hugo-kotlin/blob/main/google/README2.md)
