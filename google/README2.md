@@ -32,12 +32,12 @@
             <td>설명</td>
         </tr>
         <tr>
-            <td>CALENDAR</td>
+            <td rowspan="2">CALENDAR</td>
             <td>READ_CALENDAR</td>
             <td>캘린더 읽기</td>
         </tr>
         <tr>
-            <td>CALENDAR</td>
+            <!-- <td>CALENDAR</td> -->
             <td>WRITE_CALENDAR</td>
             <td>캘린더 쓰기</td>
         </tr>
