@@ -549,7 +549,7 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0024.png" width="400">
 
 ##### 멀티 프래그먼트
-
+[소스](https://github.com/hugoMGSung/hugo-kotlin/tree/11.Fragment2/google/MultiFragment)
 1. 프로젝트 생성
 2. 프로젝트 초기 구성 (build.gradle 및 MainActivity.kt ActivityMainBinding 추가 등)
 3. activity_main.xml 수정
