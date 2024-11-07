@@ -527,6 +527,7 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
 
 
 ##### 프래그먼트
+[소스](https://github.com/hugoMGSung/hugo-kotlin/tree/10.Fragment/google/FragmentTest)
 - 서로다른 크기의 화면을 가진 기기등 에서 하나의 액티비티로 서로 다른 레이아웃을 구성할 수 있도록 설계하는 것
 - 하나의 액티비티에 3개의 프래그먼트를 옆으로 슬라이드 하거나, 하나의 액티비티에 프래그먼트를 모아서 표시
 
