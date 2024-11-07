@@ -570,7 +570,7 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
 - 내용은 일단 생략
 
 ##### 탭 메뉴 화면구성
-[소스]()
+[소스](https://github.com/hugoMGSung/hugo-kotlin/tree/12.TabLayout/google/TabMenuTest)
 - ViewPager - Swipe로 화면을 전환하는 컨테이너
 - TabLayout - 탭 메뉴 구성
 
