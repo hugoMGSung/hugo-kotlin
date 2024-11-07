@@ -42,9 +42,24 @@
             <td>캘린더 쓰기</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>CAMERA</td>
+            <td>CAMERA</td>
+            <td>카메라</td>
+        </tr>
+        <tr>
+            <td rowspan="3">CONTACTS</td>
+            <td>READ_CONTACTS</td>
+            <td>주소록 읽기</td>
+        </tr>
+        <tr>
+            <!-- <td>CONTACTS</td> -->
+            <td>WRITE_CONTACTS</td>
+            <td>주소록 쓰기</td>
+        </tr>
+        <tr>
+            <!-- <td>CONTACTS</td> -->
+            <td>GET_ACCOUNTS</td>
+            <td>계정정보 가져오기</td>
         </tr>
     </table>
 
