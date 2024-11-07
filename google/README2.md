@@ -26,11 +26,11 @@
 - 위험권한 종류
 
     <table>
-        <th>
+        <tr>
             <td>권한그룹</td>
             <td>권한</td>
             <td>설명</td>
-        </th>
+        </tr>
         <tr>
             <td>CALENDAR</td>
             <td>READ_CALENDAR</td>
