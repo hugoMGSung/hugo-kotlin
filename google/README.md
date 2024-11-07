@@ -525,4 +525,26 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0023.png" width="400">
 
+
+##### 프래그먼트
+- 서로다른 크기의 화면을 가진 기기등 에서 하나의 액티비티로 서로 다른 레이아웃을 구성할 수 있도록 설계하는 것
+- 하나의 액티비티에 3개의 프래그먼트를 옆으로 슬라이드 하거나, 하나의 액티비티에 프래그먼트를 모아서 표시
+
+- Fragment는 하나의 액티비티에서 여러 UI 화면을 전환하거나 분할하여 사용할 수 있게 해주는 중요한 안드로이드 컴포넌트. Fragment를 사용하여 버튼을 눌렀을 때 텍스트를 변경하는 간단한 예제를 진행
+
+1. 프로젝트 생성
+2. 프로젝트 초기 구성 (build.gradle 및 MainActivity.kt ActivityMainBinding 추가 등)
+3. activity_main.xml에 FrameLayout 추가
+    - FrameLayout을 사용하여 Fragment를 담을 컨테이너를 정의
+4. fragment_example.xml 레이아웃 파일 생성
+    - Fragment 레이아웃 파일로 TextView와 Button을 포함
+5. Fragment 클래스(ExampleFragment.kt) 정의 
+    - onCreateView에서 inflate 메서드를 사용해 fragment_example.xml 레이아웃을 호출
+    - Button을 클릭하면 TextView의 텍스트가 변경되도록 설정
+6. MainActivity.kt 코드 변경
+    - supportFragmentManager를 사용해 ExampleFragment를 fragmentContainer에 추가
+    - savedInstanceState == null 조건을 통해 액티비티가 새로 생성된 경우에만 Fragment를 추가하도록 지정
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0024.png" width="400">
+
 ### 구글 플레이스토어 작업
