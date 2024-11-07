@@ -32,12 +32,12 @@
             <td>설명</td>
         </th>
         <tr>
-            <td rowspan="2">CALENDAR</td>
+            <td>CALENDAR</td>
             <td>READ_CALENDAR</td>
             <td>캘린더 읽기</td>
         </tr>
         <tr>
-            
+            <td>CALENDAR</td>
             <td>WRITE_CALENDAR</td>
             <td>캘린더 쓰기</td>
         </tr>
@@ -47,16 +47,5 @@
             <td></td>
         </tr>
     </table>
-
-    |권한그룹|권한|설명|
-    |:---|:---|:---|
-    | ACCESS_NETWORK_STATE | 네트워크 연결 상태 확인 |
-    | ACCESS_WIFI_STATE | 와이파이 상태 확인 |
-    | BLUETOOTH | 블루투스 상태 확인 |
-    | INTERNET | 네트워크 및 인터넷 사용 |
-    | NFC | 기기 간 근거리 통신 사용 |
-    | SET_ALARM | 알람 설정 |
-    | VIBRATE | 진동 설정 |
-
 
 
