@@ -566,5 +566,20 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0025.png" width="800">
 
+##### 뷰/커스텀 위젯 사용
+- 내용은 일단 생략
+
+##### 탭 메뉴 화면구성
+[소스]()
+- ViewPager - Swipe로 화면을 전환하는 컨테이너
+- TabLayout - 탭 메뉴 구성
+
+1. activity_main.xml 에 TabLayout과 ViewPager2를 추가
+2. fragment_one.xml, fragment_two.xml, fragment_three.xml, fragment_four.xml 생성
+3. FragmentOne.kt, FragmentTwo.kt, FragmentThree.kt, FragmentFour.kt 생성
+4. ViewPager 어댑터 (FragmentPagerAdapter.kt) 생성
+5. MainActivity.kt 코드 수정
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0026.png" width="800">
 
 ### 구글 플레이스토어 작업
