@@ -61,6 +61,112 @@
             <td>GET_ACCOUNTS</td>
             <td>계정정보 가져오기</td>
         </tr>
+
+        <tr>
+            <td rowspan="2">LOCATION</td>
+            <td>ACCESS_FINE_LOCATION</td>
+            <td>위치정보 사용</td>
+        </tr>
+        <tr>
+            <!-- <td>LOCATION</td> -->
+            <td>ACCESS_COARSE_LOCATION</td>
+            <td>위치정보 사용</td>
+        </tr>
+
+        <tr>
+            <td>MICROPHONE</td>
+            <td>RECORD_AUDIO</td>
+            <td>마이크 녹음</td>
+        </tr>
+
+        <tr>
+            <td rowspan="9">PHONE</td>
+            <td>READ_PHONE_STATE</td>
+            <td>폰 상태 정보</td>
+        </tr>
+        <tr>
+            <!-- <td>PHONE</td> -->
+            <td>READ_PHONE_NUMBERS</td>
+            <td>전화번호 가져오기</td>
+        </tr>
+        <tr>
+            <!-- <td>PHONE</td> -->
+            <td>CALL_PHONE</td>
+            <td>발신하기</td>
+        </tr>
+        <tr>
+            <!-- <td>PHONE</td> -->
+            <td>ANSWER_PHONE_CALLS</td>
+            <td>응답하기</td>
+        </tr>
+        <tr>
+            <!-- <td>PHONE</td> -->
+            <td>READ_CALL_LOG</td>
+            <td>전화 로그 읽기</td>
+        </tr>
+        <tr>
+            <!-- <td>PHONE</td> -->
+            <td>WRITE_CALL_LOG</td>
+            <td>전화 로그 쓰기</td>
+        </tr>
+        <tr>
+            <!-- <td>PHONE</td> -->
+            <td>ADD_VOICEMAIL</td>
+            <td>음성메일 추가</td>
+        </tr>
+        <tr>
+            <!-- <td>PHONE</td> -->
+            <td>USE_SIP</td>
+            <td>SIP 사용</td>
+        </tr>
+        <tr>
+            <!-- <td>PHONE</td> -->
+            <td>PROCESS_OUTGOING_CALLS</td>
+            <td>통화 관련 Broadcast 수신</td>
+        </tr>
+
+        <tr>
+            <td>SENSORS</td>
+            <td>BODY_SENSORS</td>
+            <td>바디센서</td>
+        </tr>
+
+        <tr>
+            <td rowspan="5">SMS</td>
+            <td>SEND_SMS</td>
+            <td>SMS 보내기</td>
+        </tr>
+        <tr>
+            <!-- <td>SMS</td> -->
+            <td>RECEIVE_SMS</td>
+            <td>SMS 받기</td>
+        </tr>
+        <tr>
+            <!-- <td>SMS</td> -->
+            <td>READ_SMS</td>
+            <td>SMS 읽기</td>
+        </tr>
+        <tr>
+            <!-- <td>SMS</td> -->
+            <td>RECEIVE_WAP_PUSH</td>
+            <td>WAP 수신</td>
+        </tr>
+        <tr>
+            <!-- <td>SMS</td> -->
+            <td>RECEIVE_MMS</td>
+            <td>MMS 받기</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2">STORAGE</td>
+            <td>READ_EXTERNAL_STORAGE</td>
+            <td>안드로이드 공용 저장소 읽기</td>
+        </tr>
+        <tr>
+            <!-- <td>STORAGE</td> -->
+            <td>WRITE_EXTERNAL_STORAGE</td>
+            <td>안드로이드 공용 저장소 쓰기</td>
+        </tr>
     </table>
 
 
