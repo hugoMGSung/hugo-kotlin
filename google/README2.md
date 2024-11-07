@@ -163,4 +163,49 @@
         </tr>
     </table>
 
+- 서명권한(Signature Permission)
+    - 권한을 사용하려는 앱이 권한을 정의하는 앱과 동일한 인증서로 서명된 경우 시스템은 권한을 자동으로 부여
+    - 몇몇 서명 권한은 써드파티 앱에서는 사용할 수 없음
+    
+- 권한 그룹
+    - 각 권한은 그룹단위로 구성
+    - 파일에 대한 읽기/쓰기 권한이 있으면 2개의 권한은 하나의 그룹
 
+
+[소스]()
+
+1. 프로젝트 생성
+2. 프로젝트 초기설정
+3. AndroidManifest.xml 권한 추가
+
+    ```xml
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.example.yourappname">
+
+        <application
+            android:allowBackup="true"
+            android:label="CameraPermissionApp"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <!-- 다른 앱 설정 -->
+        </application>
+
+        <!-- 카메라 권한 선언 -->
+        <uses-permission android:name="android.permission.CAMERA" />
+
+    </manifest>
+    ```
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0027.png" width="800">
+
+4. activity_main.xml에 카메라 권한 요청 버튼 추가
+
+5. MainActivity.kt 수정
+    - 카메라 버튼 클릭 시 권한을 확인하고, 권한이 없으면 권한 요청을 하는 로직을 구현
+    - checkCameraPermission() 메서드에서 카메라 권한이 이미 부여되었는지 확인
+    - 권한이 부여되지 않은 경우 requestPermissionLauncher를 통해 권한을 요청
+    - registerForActivityResult(ActivityResultContracts.RequestPermission())로 정의한 requestPermissionLauncher에서 권한 승인 또는 거부 여부를 처리
+    - isGranted가 true이면 카메라를 열고, false이면 권한 거부 메시지를 표시
+    - openCamera() - 실제로 카메라를 여는 메서드
+        - 이 예제에서는 Toast 메시지로 카메라가 열렸다고 표시
+        - 실제로 카메라 기능을 구현하려면 이 메서드에서 카메라 앱을 호출하거나 카메라 화면을 구성
