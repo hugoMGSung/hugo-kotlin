@@ -526,7 +526,7 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0023.png" width="400">
 
 
-##### 프래그먼트
+##### 간단 프래그먼트 
 [소스](https://github.com/hugoMGSung/hugo-kotlin/tree/10.Fragment/google/FragmentTest)
 - 서로다른 크기의 화면을 가진 기기등 에서 하나의 액티비티로 서로 다른 레이아웃을 구성할 수 있도록 설계하는 것
 - 하나의 액티비티에 3개의 프래그먼트를 옆으로 슬라이드 하거나, 하나의 액티비티에 프래그먼트를 모아서 표시
@@ -547,5 +547,24 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
     - savedInstanceState == null 조건을 통해 액티비티가 새로 생성된 경우에만 Fragment를 추가하도록 지정
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0024.png" width="400">
+
+##### 멀티 프래그먼트
+
+1. 프로젝트 생성
+2. 프로젝트 초기 구성 (build.gradle 및 MainActivity.kt ActivityMainBinding 추가 등)
+3. activity_main.xml 수정
+    - FrameLayout을 사용하여 Fragment를 담을 컨테이너를 정의하고, 3 개의 버튼을 사용해 각 Fragment로 전환할 수 있도록
+4. Fragment 레이아웃 파일 (fragment_one.xml, fragment_two.xml, fragemnt_three.xml)
+5. Fragment 클래스 정의 (FragmentOne.kt, FragmentTwo.kt, FragmentThree.kt)
+    - 각각 서로 다른 레이아웃을 onCreateView에서 inflate하여 표시
+6. MainActivity.kt 수정
+    - supportFragmentManager.beginTransaction()을 사용하여 replace()로 Fragment를 교체하는 방식으로 구현
+    - replaceFragment()라는 메서드를 추가하여, 이를 통해 Fragment를 교체할 수 있도록 설정
+    - buttonFragment1과 buttonFragment2 버튼 클릭 시 FragmentOne 또는 FragmentTwo, FragmentThree 가 fragmentContainer에 표시
+
+7. Frag1, Frag2, Frag3 버튼으로 동작. Fragment1 화면은 생략
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0025.png" width="800">
+
 
 ### 구글 플레이스토어 작업
