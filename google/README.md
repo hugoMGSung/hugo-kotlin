@@ -575,10 +575,15 @@ activity_main.xml 파일에서 UI 요소를 추가해 봅시다.
 - TabLayout - 탭 메뉴 구성
 
 1. activity_main.xml 에 TabLayout과 ViewPager2를 추가
+    - TabLayout을 통해 탭 메뉴를 표시하고, ViewPager2를 통해 각 Fragment로 전환할 수 있게
 2. fragment_one.xml, fragment_two.xml, fragment_three.xml, fragment_four.xml 생성
 3. FragmentOne.kt, FragmentTwo.kt, FragmentThree.kt, FragmentFour.kt 생성
 4. ViewPager 어댑터 (FragmentPagerAdapter.kt) 생성
+    - ViewPager2에서 사용할 Fragment 어댑터
+    - getItemCount() 메서드로 Fragment의 개수를 정의하고, createFragment() 메서드로 각 포지션에 따라 Fragment를 생성
 5. MainActivity.kt 코드 수정
+    - FragmentPagerAdapter를 ViewPager2에 설정
+    - TabLayoutMediator를 사용해 TabLayout과 ViewPager2를 연결하고, 각 탭의 제목을 설정
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0026.png" width="800">
 
