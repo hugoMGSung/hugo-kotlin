@@ -126,7 +126,6 @@
             <td>BODY_SENSORS</td>
             <td>바디센서</td>
         </tr>
-
         <tr>
             <td rowspan="5">SMS</td>
             <td>SEND_SMS</td>
