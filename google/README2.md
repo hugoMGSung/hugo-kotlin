@@ -236,3 +236,49 @@
     - 버튼 이벤트 처리 - buttonSave 버튼을 클릭하면 EditText의 텍스트를 파일에 저장하고, buttonLoad 버튼을 클릭하면 파일에서 텍스트를 로드
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0029.png" width="800">
+
+##### SharedPreferences 입출력
+
+1. 프로젝트 생성
+2. 프로젝트 초기설정
+3. activity_main.xml 수정
+    - 데이터를 입력할 EditText, 데이터를 저장하고 불러올 버튼들, 그리고 저장된 데이터를 보여줄 TextView를 추가
+4. MainActivity.kt 작성
+    - sharedPrefFile 변수에 저장할 파일의 이름을 지정합니다. SharedPreferences 파일은 해당 앱에만 접근이 가능하며, getSharedPreferences() 메서드를 사용
+    - Save 버튼 클릭 시 edit() 메서드를 사용하여 SharedPreferences에 데이터를 저장
+    - putString("savedText", textToSave)로 "savedText"라는 키를 사용하여 데이터를 저장하고, apply()로 변경사항을 적용
+    - Load 버튼 클릭 시 getString("savedText", "저장된 데이터가 없습니다.")로 데이터 로드
+    - 불러온 데이터를 TextView에 표시
+
+5. 메뉴 > Project Structure... 클릭
+    - 앱 선택 후 + 클릭
+    - Add Dependency 클릭
+    - Step 1 에 preference 입력 후 검색버튼 클릭
+    - Group ID가 androidx.preference 인 preference:1.2.1과 preference-ktx:1.2.1 추가
+    - Step 2 는 implementation
+ 
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0030.png" width="800">
+
+- 나중에 다시!!
+
+
+#### SQLite 연동
+- DB 기초내용은 생략
+
+##### DB 연동
+
+[소스]()
+
+1. 프로젝트 생성
+2. 기초 설정
+3. SQLiteOpenHelper 클래스 정의, DatabaseHelper.kt
+    - onCreate 메서드에서 테이블을 생성합니다. 여기서는 id, name, age 세 개의 컬럼을 갖는 테이블을 생성
+    - insertData 메서드를 통해 데이터를 테이블에 삽입하고, getAllData 메서드를 통해 모든 데이터를 조회
+4. activity_main.xml 수정
+    - 데이터를 입력할 EditText, 데이터를 삽입하고 조회할 Button, 그리고 조회 결과를 표시할 TextView를 추가
+5. MainActivity.kt 작업
+    - Insert 버튼 클릭 시 사용자가 입력한 이름과 나이를 데이터베이스에 삽입
+    - Select 버튼 클릭 시 데이터베이스에서 모든 데이터를 조회하여 TextView에 표시
+
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0031.png" width="800">
