@@ -172,7 +172,7 @@
     - 파일에 대한 읽기/쓰기 권한이 있으면 2개의 권한은 하나의 그룹
 
 
-[소스]()
+[소스](https://github.com/hugoMGSung/hugo-kotlin/tree/13.Registration-Camera/google/CameraReg)
 
 1. 프로젝트 생성
 2. 프로젝트 초기설정
@@ -209,3 +209,5 @@
     - openCamera() - 실제로 카메라를 여는 메서드
         - 이 예제에서는 Toast 메시지로 카메라가 열렸다고 표시
         - 실제로 카메라 기능을 구현하려면 이 메서드에서 카메라 앱을 호출하거나 카메라 화면을 구성
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0028.png" width="800">
