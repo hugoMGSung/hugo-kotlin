@@ -222,7 +222,7 @@
     - 매니페스트에 접근하려는 파일은 외부저장소 디렉터리 권한을 명세
 
 ##### 내부저장소 파일 입출력
-[소스]()
+[소스](https://github.com/hugoMGSung/hugo-kotlin/tree/14.FileIO/google/FileIoTest)
 
 1. 프로젝트 생성
 2. 프로젝트 초기설정
