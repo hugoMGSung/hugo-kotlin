@@ -5,8 +5,6 @@
 ### 안드로이드와 코틀린 - 계속
 
 #### 권한
-
-##### 안드로이드앱 권한 설정 방법
 - 아래 두가지 방법으로 분류
     - AndroidManifest.xml에 작성 - 인터넷 접속 같은 일반 권한은 설정파일에...
     - 소스코드 작성 - 전화번호부 요청같은 개인정보 노출 위험등이 있다면 소스코드에...
@@ -171,7 +169,7 @@
     - 각 권한은 그룹단위로 구성
     - 파일에 대한 읽기/쓰기 권한이 있으면 2개의 권한은 하나의 그룹
 
-
+##### 안드로이드앱 권한 설정 방법
 [소스](https://github.com/hugoMGSung/hugo-kotlin/tree/13.Registration-Camera/google/CameraReg)
 
 1. 프로젝트 생성
@@ -211,3 +209,30 @@
         - 실제로 카메라 기능을 구현하려면 이 메서드에서 카메라 앱을 호출하거나 카메라 화면을 구성
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0028.png" width="800">
+
+#### 파일 IO
+
+- 안드로이드 가상머신이 동작하는 플랫폼
+    - 리눅스 파일시스템, 파일과 디렉토리에 대한 권한 설정
+- 내부 저장소(앱별 저장공간)
+    - 설치한 앱에 제공되는 디렉토리
+    - 특정앱을 설치하면 /data/data/App 디렉토리 생성, 설치한 앱만이 디렉터리 읽고쓰는 권한 있음
+- 외부 저장소(공유저장공간)
+    - 모든 앱이 함께 사용할 수 있는 공용공간
+    - 매니페스트에 접근하려는 파일은 외부저장소 디렉터리 권한을 명세
+
+##### 내부저장소 파일 입출력
+[소스]()
+
+1. 프로젝트 생성
+2. 프로젝트 초기설정
+3. activity_main.xml 수정
+    - 파일에 데이터를 저장하고 읽는 기능을 수행하는 버튼과 텍스트를 표시할 EditText 및 TextView를 추가
+4. MainActivity.kt 작성
+    - Save 버튼을 클릭하면 EditText의 내용을 파일에 저장하고, Load 버튼을 클릭하면 파일에서 저장된 내용을 읽어 TextView에 표시
+    - fileName 변수에 저장할 파일 이름을 정의합니다. 예제에서는 "hugoText.txt"로 파일 이름을 지정
+    - 파일쓰기 saveToFile - FileOutputStream을 이용해 내부 저장소에 파일을 열고, write 메서드로 문자열을 저장. 
+    - 파일읽기 loadFromFile - FileInputStream을 사용하여 파일을 읽고, bufferedReader를 이용해 파일 내용을 텍스트로 변환하여 로드
+    - 버튼 이벤트 처리 - buttonSave 버튼을 클릭하면 EditText의 텍스트를 파일에 저장하고, buttonLoad 버튼을 클릭하면 파일에서 텍스트를 로드
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0029.png" width="800">
