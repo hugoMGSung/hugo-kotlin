@@ -282,3 +282,8 @@
 
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0031.png" width="800">
+
+
+#### 카메라 연동
+
+- 09
