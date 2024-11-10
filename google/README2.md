@@ -291,7 +291,9 @@
     - 촬영 사진 기기 갤러리 저장
     - 사진 로드
 
-[소스]()
+- 만들면서 CameraReg, CameraReg2 등에 문제 발생!!
+
+[소스](https://github.com/hugoMGSung/hugo-kotlin/tree/16.Camera/google/CameraReg3)
 
 1. 프로젝트 생성
 2. build.gradle (:app) 수정
