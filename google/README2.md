@@ -285,5 +285,89 @@
 
 
 #### 카메라 연동
+- 카메라와 갤러리 사용
+    - 카메라와 저장소 접근 권한 요청
+    - 카메라 인텐트로 사진 촬영
+    - 촬영 사진 기기 갤러리 저장
+    - 사진 로드
 
-- 09
+[소스]()
+
+1. 프로젝트 생성
+2. build.gradle (:app) 수정
+    - compileSdk 35
+    
+    ```groovy
+    buildFeatures {
+        viewBinding = true
+    }
+    ```
+    
+3. AndroidManifest.xml 에 내용 수정
+
+    ```xml
+    <!-- 카메라와 저장소 권한 -->
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CameraReg3"
+        tools:targetApi="31"
+        android:requestLegacyExternalStorage="true">
+        <!-- ... -->
+    ```
+
+4. xml/file_paths.xml 작성
+    - xml 디렉토리 > New > XML Resource file 선택
+
+    ```xml
+    <paths xmlns:android="http://schemas.android.com/apk/res/android">
+        <external-path name="external_files" path="." />
+    </paths>
+    ```
+
+5. activity_main.xml 코드 작성
+
+    ```xml
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/buttonCamera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="카메라로 사진 찍기" />
+
+        <Button
+            android:id="@+id/buttonLoadImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="갤러리에서 사진 불러오기" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="Selected image will be shown here" />
+    </LinearLayout>
+    ```
+
+6. MainActivity.kt 수정
+    - 내용 생략 
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0033.png" width="400">

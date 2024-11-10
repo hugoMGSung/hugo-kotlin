@@ -162,7 +162,7 @@
     - Save location: 프로젝트를 저장할 위치를 지정합니다.
     - Language: "Kotlin"을 선택합니다.
     - Minimum API Level: 앱이 지원할 Android 버전을 설정합니다. 일반적으로 API 21 (Lollipop) 정도가 좋은 선택입니다.
-    - Build configuration language : Kotlin DSL은 최신, Groovy DSL은 예전 방식입니다.
+    - Build configuration language : Kotlin DSL은 최신, **Groovy DSL**은 예전 방식입니다.
 
 4. Finish:
     - 설정을 마친 후 "Finish"를 클릭하면 프로젝트가 생성됩니다.
