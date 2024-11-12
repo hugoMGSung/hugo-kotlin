@@ -391,7 +391,7 @@
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0034.png" width="800">
 
 
-#### 스레드/코루틴
+#### 스레드
 
 - 메인 스레드는 1개의 스레드만 존재. 백그라운드 스레드는 여러개의 스레드 사용가능
 - 메인 스레드의 특징
@@ -427,3 +427,52 @@
 1. 타이머로 변경
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0037.png" width="400">
+
+
+#### 코루틴
+
+- 스레드를 경량화한 코루틴Coroutine이라는 새로운 도구를 제공
+    - 타언어에서 이미 사용되고 있는 동시성 프로그래밍 개념을 코틀린에 도입
+    - 컨텍스트 스위칭을 하나의 스레드에서 처리하므로 성능 저하가 적고, 동일한 구조에서는 스레드보다 훨씬 적은 자원을 소모
+    - 디스패처(코루틴이 실행될 스레드를 지정하는 것) 를 사용하여 코루틴스코프를 구성
+    - 코루틴은 launch와 async로 시작가능
+
+##### 코루틴
+
+[소스]()
+
+1. 프로젝트 생성
+2. build.gradle에 의존성 추가
+
+    ```groovy
+    android {
+        namespace = "com.hugo83.imagedownloader"
+        compileSdk = 35
+
+        // 생략...
+        buildFeatures {
+            viewBinding = true
+        }
+    }
+    dependencies {
+
+        implementation(libs.androidx.core.ktx)
+        // 생략...
+        // 추가
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
+        implementation("com.github.bumptech.glide:glide:4.12.0")
+    }   
+    ```
+
+3. AndroidManifest.xml 권한 추가
+
+    ```xml
+    <uses-permission android:name="android.permission.INTERNET"/>
+    ```
+
+4. activity_main.xml 수정
+    - Button, EditText, ImageView, ProgressBar 로 구성
+
+5. MainActivity.kt 작성
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0038.png" width="850">
