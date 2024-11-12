@@ -392,6 +392,7 @@
 
 
 #### 스레드/코루틴
+
 - 메인 스레드는 1개의 스레드만 존재. 백그라운드 스레드는 여러개의 스레드 사용가능
 - 메인 스레드의 특징
     - 화면 UI를 그리는 처리에 담당
@@ -409,6 +410,7 @@
 
 ##### 스레드 예제
 [소스](https://github.com/hugoMGSung/hugo-kotlin/tree/18.Thread/google/ThreadTest)
+
 1. 프로젝트 생성
 2. build.gradle.kts 수정, ReSync
 3. MainActivity.kt 코드 수정
@@ -418,6 +420,8 @@
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0036.png" width="830">
 
 ##### 타이머 예제
+[소스](https://github.com/hugoMGSung/hugo-kotlin/tree/19.ThreadTimer/google/ThreadTest)
+
 - 위의 소스에서 계속(내용 생략)
 
 1. 타이머로 변경
