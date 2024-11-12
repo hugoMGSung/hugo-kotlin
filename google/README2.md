@@ -390,3 +390,29 @@
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0034.png" width="800">
 
+
+#### 스레드/코루틴
+- 메인 스레드는 1개의 스레드만 존재. 백그라운드 스레드는 여러개의 스레드 사용가능
+- 메인 스레드의 특징
+    - 화면 UI를 그리는 처리에 담당
+    - android.widget, android.view 등의 안드로이드 UI 툴킷 구성요소와 인터렉션, UI 이벤트는 사용자와 응답
+    - UI 이벤트 및 프로세스가 수 초내에 응답하지 않으면 ANR(Application Not Responding) 팝업창을 표시 - 윈도우 앱에서 응답없음과 동일
+
+- 백그라운드 스레드
+    - 시간을 특정할 수 없는 작업에 대체방안
+    - Thread Class
+        - Thread 클래스 상속받은 WorkerThread 클래스 정의
+        - run() 메서드와 start() 메서드가 WorkerThread 작업 처리
+    - Runnable Interface
+        - Runnable 구현한 WorkerRunnable 클래스 정의
+        - Thread 클래스의 생성자로 객체 전달 후 start() 메서드를 호출
+
+##### 스레드 예제
+[소스]()
+1. 프로젝트 생성
+2. build.gradle.kts 수정, ReSync
+3. MainActivity.kt 코드 수정
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0035.png" width="800">
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0036.png" width="830">
