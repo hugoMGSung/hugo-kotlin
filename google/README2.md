@@ -377,7 +377,7 @@
 
 
 ##### CameraX
-[소스]()
+[소스](https://github.com/hugoMGSung/hugo-kotlin/tree/17.CameraX/google/CameraXApp)
 
 1. 프로젝트 생성
     - Empty View Activity가 아니라 Empty Activity로 만들것
@@ -388,4 +388,5 @@
 6. 9번 작성시 PhotoBottomSheetContent.kt 생성, 작성
 7. 19번 작성시 MainViewModel.kt 클래스 생성, 작성
 
-    
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0034.png" width="800">
+
