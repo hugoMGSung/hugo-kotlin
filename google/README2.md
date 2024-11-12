@@ -408,7 +408,7 @@
         - Thread 클래스의 생성자로 객체 전달 후 start() 메서드를 호출
 
 ##### 스레드 예제
-[소스]()
+[소스](https://github.com/hugoMGSung/hugo-kotlin/tree/18.Thread/google/ThreadTest)
 1. 프로젝트 생성
 2. build.gradle.kts 수정, ReSync
 3. MainActivity.kt 코드 수정
