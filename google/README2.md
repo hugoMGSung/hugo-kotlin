@@ -416,3 +416,10 @@
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0035.png" width="800">
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0036.png" width="830">
+
+##### 타이머 예제
+- 위의 소스에서 계속(내용 생략)
+
+1. 타이머로 변경
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0037.png" width="400">
