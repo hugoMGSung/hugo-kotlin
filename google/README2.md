@@ -293,6 +293,7 @@
 
 - 만들면서 CameraReg, CameraReg2 등에 문제 발생!!
 
+##### 일반 카메라
 [소스](https://github.com/hugoMGSung/hugo-kotlin/tree/16.Camera/google/CameraReg3)
 
 1. 프로젝트 생성
@@ -373,3 +374,18 @@
     - 내용 생략 
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0033.png" width="400">
+
+
+##### CameraX
+[소스]()
+
+1. 프로젝트 생성
+    - Empty View Activity가 아니라 Empty Activity로 만들것
+2. build.gradle.kts, dependencies 추가
+3. AndroidManifest.xml 에 카메라 권한 추가
+4. MainActivity.kt 작성 시작
+5. 4번 작성시 CameraPreview.kt 생성, 작성
+6. 9번 작성시 PhotoBottomSheetContent.kt 생성, 작성
+7. 19번 작성시 MainViewModel.kt 클래스 생성, 작성
+
+    
