@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    kotlin("kapt") // kapt 플러그인 추가
 }
 
 android {
@@ -52,4 +53,5 @@ dependencies {
     // 추가
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
     implementation("com.github.bumptech.glide:glide:4.12.0")
+    kapt("com.github.bumptech.glide:compiler:4.12.0") // 코틀린 DSL 형식으로 kapt 사용
 }

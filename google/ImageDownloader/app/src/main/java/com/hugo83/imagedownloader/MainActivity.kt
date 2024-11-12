@@ -4,10 +4,13 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
 import com.hugo83.imagedownloader.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -22,26 +25,45 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.run { // run으로 감싸고
-            binding.buttonDownload.setOnClickListener {
-                CoroutineScope(Dispatchers.Main).launch { // 코루틴스코프를 launch로 실행하며
-                    binding.progress.visibility = View.VISIBLE
-
-                    val url = binding.editUrl.text.toString()
-                    val bitmap = withContext(Dispatchers.IO) { // 디스패처 IO가 완료되면
-                        loadImage(url) // 서스펜드 함수를 호출한다.
-                    }
-                    binding.imagePreview.setImageBitmap(bitmap)
-                    binding.progress.visibility = View.GONE
-                 }
+        binding.buttonDownload.setOnClickListener {
+            val url = binding.editUrl.text.toString()
+            if (url.isNotBlank()) {
+                downloadImage(url)
+            } else {
+                Toast.makeText(this, "URL을 입력하세요", Toast.LENGTH_SHORT).show()
             }
         }
-    } // 그외 나머지는 기존 소스들과 동일함
-}
+    }
 
-// suspend 키워드는 해당 함수가 일시 중단(suspend) 될 수 있으며, 코루틴 내에서 호출될 수 있음
-suspend fun loadImage(imageUrl:String) : Bitmap {
-    val url = URL(imageUrl)
-    val stream = url.openStream()
-    return BitmapFactory.decodeStream(stream)
+    private fun downloadImage(url: String) {
+        lifecycleScope.launch {
+            // 프로그래스바 표시
+            binding.progress.visibility = android.view.View.VISIBLE
+            try {
+                withContext(Dispatchers.IO) {
+                    Glide.with(this@MainActivity)
+                        .load(url)
+                        .submit()
+                        .get()
+                }
+
+                // UI 스레드에서 이미지 표시
+                Glide.with(this@MainActivity)
+                    .load(url)
+                    .error(R.drawable.ic_launcher_foreground)
+                    .into(binding.imagePreview)
+
+            } catch (e: Exception) {
+                // 예외 발생 시 기본 이미지 표시 및 오류 메시지
+                Glide.with(this@MainActivity)
+                    .load(R.drawable.ic_launcher_foreground)
+                    .into(binding.imagePreview)
+
+                Toast.makeText(this@MainActivity, "이미지 다운로드 실패", Toast.LENGTH_SHORT).show()
+            } finally {
+                // 프로그래스바 숨기기
+                binding.progress.visibility = android.view.View.GONE
+            }
+        }
+    }
 }

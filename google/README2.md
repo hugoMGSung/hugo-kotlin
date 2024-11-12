@@ -476,3 +476,11 @@
 5. MainActivity.kt 작성
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0038.png" width="850">
+
+[소스]()
+
+6. Glide 라이브러리를 사용하여 처리하여도 동일한 기능 제공
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0039.png" width="300">
+
+
