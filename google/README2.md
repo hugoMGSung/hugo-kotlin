@@ -524,6 +524,8 @@
 
 #### 바운드서비스 프로젝트
 
+[소스](https://github.com/hugoMGSung/hugo-kotlin/tree/23.BoundService/google/BoundServiceApp)
+
 1. 프로젝트 생성 및 초기화
 2. MyBoundService.kt 클래스 생성 및 작성
 3. activity_main.xml 레이아웃 수정
@@ -534,7 +536,15 @@
 
 #### 포어그라운드 서비스 프로젝트
 
+[소스]()
 
+1. 프로젝트 생성 및 초기화
+2. MyForegroundService.kt 클래스 생성 및 작성
+3. activity_main.xml 레이아웃 수정
+4. MainActivity.kt 작성
+5. AndroidManifest.xml 서비스 등록
+
+- 아직 잘안됨. 보류
 
 #### 네트워크
 12장
