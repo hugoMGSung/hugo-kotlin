@@ -484,7 +484,7 @@
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0039.png" width="300">
 
 
-#### 서비스 / 컨텐트리졸버
+#### 서비스와 컨텐트리졸버
 - 안드로이드에서 자주 사용되는 중요한 컴포넌트
 
 1. 서비스 - 화면이 없는 액티비티
@@ -536,7 +536,7 @@
 
 #### 포어그라운드 서비스 프로젝트
 
-[소스]()
+[소스](https://github.com/hugoMGSung/hugo-kotlin/tree/24.ForegoundService/google/ForgoundServiceApp)
 
 1. 프로젝트 생성 및 초기화
 2. MyForegroundService.kt 클래스 생성 및 작성
@@ -545,6 +545,9 @@
 5. AndroidManifest.xml 서비스 등록
 
 - 아직 잘안됨. 보류
+
+### 컨텐츠 리졸버
+
 
 #### 네트워크
 12장
