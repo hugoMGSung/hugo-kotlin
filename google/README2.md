@@ -484,3 +484,49 @@
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0039.png" width="300">
 
 
+#### 서비스 / 컨텐트리졸버
+- 안드로이드에서 자주 사용되는 중요한 컴포넌트
+
+1. 서비스 - 화면이 없는 액티비티
+    - 백그라운드에서 장시간 실행되는 작업을 처리하는 컴포넌트. 
+        - 미디어 플레이어 앱 - 음악을 계속 재생하는 백그라운드 서비스
+        - 위치 기반 앱 - 사용자 위치를 추적하는 서비스
+        - 파일 다운로드 - 다운로드 완료될 때까지 계속 실행되는 서비스
+
+    - 서비스 종류
+        - Started Service - 명령을 받으면 작업을 수행, 스스로 종료
+        - Bound Service - 다른 컴포넌트가 서비스와 바인딩하여 상호작용
+        - Forground Service - 알림을 통해 사용자에게 지속적으로 보여지는 서비스
+
+2. 컨텐트 리졸버
+    - 앱이 다른 앱 또는 시스템의 데이터에 접근하도록 해주는 인터페이스. 데이터 공유 매개체를 통해 다른 앱 데이터에 접근
+        - 연락처 앱에서 다른 앱이 연락처를 읽으려면 Content Resolver 를 사용
+        - 사진이나 파일을 가져오거나 다른 앱 데이터를 사용해야 할 때 사용
+
+- 서비스는 백그라운드 작업을 수행하므로 주로 장시간 실행이 필요한 작업
+- 컨텐트 리졸버는 다른 앱의 데이터, 시스템 데이터에 접근이 필요할 때
+
+
+#### 서비스 프로젝트
+
+[소스]()
+
+1. 프로젝트 생성 및 초기화
+2. MyService.kt 클래스 생성 및 작성
+    - onCreate: 서비스가 처음 생성될 때 한 번만 호출
+    - onStartCommand: 서비스가 시작될 때마다 호출. 여기서 for 루프와 Thread.sleep()을 사용해 간단한 작업을 수행하도록
+    - onDestroy: 서비스가 종료될 때 호출.
+3. activity_main.xml 레이아웃 수정
+4. MainActivity.kt 작성
+5. AndroidManifest.xml 서비스 등록
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0040png" width="850">
+
+#### 네트워크
+12장
+
+#### 파이어베이스
+13장
+
+#### 플레이스토어 게시
+
