@@ -13,6 +13,7 @@ import androidx.core.app.NotificationCompat
 
 class MyForegroundService : Service() {
 
+    // static 멤버를 정의
     companion object {
         // CHANNEL_ID: 알림 채널을 정의하고 식별하는 상수
         const val CHANNEL_ID = "ForegroundServiceChannel"
