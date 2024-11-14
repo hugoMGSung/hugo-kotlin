@@ -520,7 +520,7 @@
 4. MainActivity.kt 작성
 5. AndroidManifest.xml 서비스 등록
 
-    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0040png" width="850">
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0040.png" width="850">
 
 #### 네트워크
 12장
