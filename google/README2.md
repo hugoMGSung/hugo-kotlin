@@ -544,16 +544,58 @@
 4. MainActivity.kt 작성
 5. AndroidManifest.xml 서비스 등록
 
-- 아직 잘안됨. 보류
+- 동작 확인안됨. 보류
 
-### 컨텐츠 리졸버
+#### 컨텐츠 리졸버
+- 기기에 저장된 음원 목록을 가져와 표시
 
+1. 프로젝트 생성 및 초기화
+2. AndroidManifest.xml 권한 등록
+3. Music.kt 클래스 생성 및 작성
+4. activity_main.xml 디자인 작업
+5. item_recycler.xml 생성 및 작업
+6. MusicRecyclerAdapter.kt 클래스 생성
+7. MainActivity.kt 수정
 
-#### 네트워크
-12장
+- 권한 문제 발견. 보류
 
-#### 파이어베이스
+### 네트워크
+
+#### 구글지도앱 
+
+[소스]()
+
+1. Android Studio > SDK Manager > SDK Tools 내 Google Play services 체크 설치
+2. 프로젝트 생성 - Empty Activity 로 만들어도 상관없음
+3. MainActivity.kt, activity_main.xml 삭제
+4. New > Google > Google Maps Views Activity 클릭
+    - MainActivity 로 이름 변경
+    - Launcher Activity 체크박스 체크
+
+5. GoogleMaps API 키 받기
+    - AndroidManifest.xml 에 Google에 관련된 내용 추가
+    - https://developers.google.com/maps/documentation/android-sdk/get-api-key 링크 클릭
+
+    - 새 프로젝트 생성 > 프로젝트 선택
+    - API 및 서비스 > + API 및 서비스 사용 설정 > GoogleMap 검색 > Maps sdk for Android
+    - 사용자 인증 정보 > API 키 생성
+
+6. AndroidManifest.xml 에 API 키 복사
+
+    ```xml
+    <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="YOUR_API_KEY" />
+    ```
+
+7. build.gradle.kts에 구글플레이 서비스 라이브러리 추가
+8. activity_main.xml 수정
+9. MainActivity.kt 수정
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0042.png" width="310">
+
+### 파이어베이스
 13장
 
-#### 플레이스토어 게시
+### 플레이스토어 게시
 
