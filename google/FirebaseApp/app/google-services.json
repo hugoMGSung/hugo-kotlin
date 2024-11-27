@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "101560182164",
+    "firebase_url": "https://kotlin-handling-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "kotlin-handling",
+    "storage_bucket": "kotlin-handling.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101560182164:android:45af49f9b513230f789b81",
+        "android_client_info": {
+          "package_name": "com.hugo83.firebaseapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaD4DT4vCRezs9J9yX4Ygl0Z16radBATc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

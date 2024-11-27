@@ -594,12 +594,20 @@
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0042.png" width="310">
 
+##### VideoPlayer
+
+[소스]()
+
+- 실행순서 생략
+
 #### 네트워크
 
 ##### 레트로핏 데이터통신 라이브러리
 - 적은 양의 코드로 데이터 통신을 할 수 있게 도와주는 레트로핏(Retrofit) 라이브러리
 
 ##### 깃헙 정보확인 앱
+
+[소스](https://github.com/hugoMGSung/hugo-kotlin/tree/26.Retrofit/google/MyGithubApp)
 
 1. 프로젝트 생성, 설정
     - AndroidManifest.xml에 인터넷 연결 권한 추가 
@@ -619,9 +627,65 @@
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0043.png" width="310">
 
+##### 서울 도서관 정보확인 앱
+
+1. 프로젝트 생성, 설정
+2. 구글맵 사용에 관한 설정 완료, 앱 실행확인
+3. data 폴더(패키지) 생성 후 Row.kt 데이터 클래스 생성 
+4. data/RESULT.kt 데이터 클래스 생성
+5. data/SeoulLibraryInfo.kt 데이터 클래스 생성
+6. data/Library.kt 데이터 클래스 생성
+7. SeoulOpenApi.kt 클래스 생성
+8. ... 우선 실행 불가. 원인 찾아 해결뒤 다시!!
 
 ### 파이어베이스
-13장
 
-### 플레이스토어 게시
+#### 파이어베이스 개요
+- 고품질 앱을 개발할 수 있게 도와주는 백엔드 서비스(BaaS)
+- 서버 기능을 실제 서버 구성없이 배포가 가능한 수준의 서비스로 만들어주어 스타트업에서 좋은 대안으로 사용
+- 구글 서비스로 지메일 계정만 있으면 사용 가능
+
+##### 파이어베이스 프로젝트 생성
+1. https://firebase.com 접속
+2. 프로젝트 생성
+3. Google 애널리틱스 계속
+4. 프로젝트 만들기 버튼 클릭
+
+##### 코틀린 앱 프로젝트 생성
+
+1. 안드로이드 스튜디오 FirebaseApp 으로 프로젝트 생성
+2. 패키지 명 확인 - com.hugo83.firebaseapp
+3. 파이어베이스 사이트에서 생성한 프로젝트에 안드로이드 아이콘 클릭
+4. 위의 패지키명 붙여넣기
+5. 앱 등록 후 google-services.json 파일 다운로드
+6. 프로젝트의 app 폴더에 붙여넣기
+7. build.gradle.kts(app) 에 Firebase SDK 추가
+
+##### 파이어베이스 웹
+
+1. 모든 제품 > Realtime Database 선택
+2. 데이터베이스 만들기 클릭
+3. 데이터베이스 설정 > 실시간 데이터베이스 위치를 싱가포르(asis-southeast1) 선택 후 다음 클릭
+4. 테스트 모드에서 시작을 클릭 후 사용설정 
+
+##### 코틀린 연결 확인
+
+1. MainActivity.kt 의 onCreate() 메서드에 firebase 연결 작성
+2. 앱 실행
+3. 파이어베이스 웹에서 데이터 확인
+
+##### 파이어베이스 앱 초기화 문제!
+
+- 계속해서 FATAL EXCEPTION: main 오류 발생 대기
+
+### 플레이스토어 게시(맨 마지막)
+
+#### 순서
+1. 키 스토어 생성
+2. 설치 파일 생성
+3. 구글 플레이 콘솔 가입
+4. 콘솔에 앱 정보 작성
+5. AAB 업로드 내부테스트
+6. 알파 테스트
+7. 프로덕션 출시
 
