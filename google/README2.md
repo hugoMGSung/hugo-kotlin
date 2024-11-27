@@ -559,11 +559,11 @@
 
 - 권한 문제 발견. 보류
 
-### 네트워크
+### 네트워크 및 구글지도
 
 #### 구글지도앱 
 
-[소스]()
+[소스](https://github.com/hugoMGSung/hugo-kotlin/tree/25.GoogleMap/google/HugoGoogleMapApp)
 
 1. Android Studio > SDK Manager > SDK Tools 내 Google Play services 체크 설치
 2. 프로젝트 생성 - Empty Activity 로 만들어도 상관없음
@@ -593,6 +593,32 @@
 9. MainActivity.kt 수정
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0042.png" width="310">
+
+#### 네트워크
+
+##### 레트로핏 데이터통신 라이브러리
+- 적은 양의 코드로 데이터 통신을 할 수 있게 도와주는 레트로핏(Retrofit) 라이브러리
+
+##### 깃헙 정보확인 앱
+
+1. 프로젝트 생성, 설정
+    - AndroidManifest.xml에 인터넷 연결 권한 추가 
+2. Gradle 의존성 추가
+    - kapt 추가
+        - Kotlin Annotation Processing Tool (KAPT) 
+        - 자바에서 사용하는 어노테이션 기반 라이브러리(예: Glide, Room, Dagger 등)를 Kotlin에서도 사용할 수 있게 해주는 기능
+
+3. GitHub API URL 확인
+
+    - https://api.github.com/users/{username} 
+
+4. GitHub API 인터페이스 GitHubApi.kt 생성
+5. Retrofit 오브젝트 RetrofitInstance.kt 생성
+6. activity_main.xml 수정
+7. MainActivity.kt 작성
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0043.png" width="310">
+
 
 ### 파이어베이스
 13장
