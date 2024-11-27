@@ -596,9 +596,11 @@
 
 ##### VideoPlayer
 
-[소스]()
+[소스](https://github.com/hugoMGSung/hugo-kotlin/tree/27.VideoPlayer/google/VideoPlayer)
 
 - 실행순서 생략
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0044.png" width="310">
 
 #### 네트워크
 
