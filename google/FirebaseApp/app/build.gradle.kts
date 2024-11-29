@@ -1,10 +1,10 @@
 plugins {
     id("com.android.application")
-    id("com.google.gms.google-services") // Google Services 플러그인
+    id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services") // Firebase
 }
 
 android {
-
     namespace = "com.hugo83.firebaseapp"
     compileSdk = 35
 
@@ -31,6 +31,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
     buildFeatures {
         viewBinding = true
     }
@@ -48,8 +51,12 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation(platform("com.google.firebase:firebase-bom:33.6.0"))
     implementation("com.google.firebase:firebase-database-ktx:21.0.0")
+    implementation("androidx.recyclerview:recyclerview:1.3.1")
+    implementation(platform("com.google.firebase:firebase-bom:33.6.0"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.gms:google-services:4.4.2")
 }
+
+// Firebase 추가
+apply(plugin = "com.google.gms.google-services")

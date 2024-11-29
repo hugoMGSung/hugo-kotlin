@@ -676,9 +676,13 @@
 2. 앱 실행
 3. 파이어베이스 웹에서 데이터 확인
 
-##### 파이어베이스 앱 초기화 문제!
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0045.png" width="310">
 
-- 계속해서 FATAL EXCEPTION: main 오류 발생 대기
+    [입력값확인]
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0046.png" width="700">
+
+    [파이어베이스확인]
 
 ### 플레이스토어 게시(맨 마지막)
 

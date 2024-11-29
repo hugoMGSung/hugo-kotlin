@@ -7,7 +7,7 @@ plugins {
 
 buildscript {
     dependencies {
-        // Google Services 플러그인 추가
+        // Google Services 플러그인 추가  (프로젝트 수준):
         classpath("com.google.gms:google-services:4.3.15")
     }
 }
