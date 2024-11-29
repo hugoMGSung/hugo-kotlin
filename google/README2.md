@@ -638,7 +638,12 @@
 5. data/SeoulLibraryInfo.kt 데이터 클래스 생성
 6. data/Library.kt 데이터 클래스 생성
 7. SeoulOpenApi.kt 클래스 생성
-8. ... 우선 실행 불가. 원인 찾아 해결뒤 다시!!
+8. activity_main.xml 작업
+9. MainActivity.kt 메인 클래스 작업
+10. ClusterManager 작업 추가
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0047.png" width="310">
+
 
 ### 파이어베이스
 
