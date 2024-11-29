@@ -13,7 +13,9 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.maps.android.clustering.ClusterManager
 import com.hugo83.seoulpubliclibraryinfo.data.Library
+import com.hugo83.seoulpubliclibraryinfo.data.Row
 import com.hugo83.seoulpubliclibraryinfo.databinding.ActivityMainBinding
 
 import retrofit2.Call
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     private lateinit var mMap: GoogleMap
+    private lateinit var clusterManager: ClusterManager<Row>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,8 +42,13 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         // 기본 위치(서울 시청) 설정
-        val seoulCityHall = LatLng(37.551228, 126.988208) // 서울N타워 위치
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(seoulCityHall, 12f))
+        //val seoulCityHall = LatLng(37.551228, 126.988208) // 서울N타워 위치
+        //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(seoulCityHall, 12f))
+
+        // 클러스터 매니저 세팅
+        clusterManager = ClusterManager(this, mMap)
+        mMap.setOnCameraIdleListener(clusterManager) // 화면을 이동 후 멈췄을  때 설정
+        mMap.setOnMarkerClickListener(clusterManager) // 마커 클릭 설정
 
         loadLibraries()
     }
@@ -73,27 +81,12 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         Toast.makeText(baseContext, libraries.SeoulPublicLibraryInfo.row.count().toString(), Toast.LENGTH_LONG).show()
 
         for (lib in libraries.SeoulPublicLibraryInfo.row) {
+            //5. 기존 마커 세팅코드는 삭제하고 클러스터 메니저에 데이터를 추가하는 코드만 넣어준다.
+            clusterManager.addItem(lib)
+
+            // 첫 화면에 보여줄 범위를 정하기 위해서 아래 코드 두 줄은 남겨둔다.
             val position = LatLng(lib.XCNTS.toDouble(), lib.YDNTS.toDouble())
-            val marker = MarkerOptions().position(position).title(lib.LBRRY_NAME)
-
-            var obj = mMap.addMarker(marker)
-            if (obj != null) {
-                obj.tag = lib.HMPG_URL
-            }
-
-            mMap.setOnMarkerClickListener {
-                if (it.tag != null) {
-                    var url = it.tag as String
-                    if (!url.startsWith("http")) {
-                        url = "http://${url}"
-                    }
-                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-                    startActivity(intent)
-                }
-                true
-            }
-
-            latLngBounds.include(marker.position)
+            latLngBounds.include(position)
         }
 
         val bounds = latLngBounds.build()
