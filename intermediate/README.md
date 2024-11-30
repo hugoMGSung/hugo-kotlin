@@ -98,9 +98,49 @@
 
     [앱과프리뷰차이]
 
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0050.png" width="500">
+
+    [프리뷰]
+
+##### 소감
+
+- 일단 베타버전이라 그런지 계속 사용방법 로직이 변경되고 있음
+- 나중에 참조, 적용할 예정
 
 ### 앱 프로젝트
 - UiLover Android 클로닝
 - Philipp Lackner 클로닝
 
-#### 
+#### Coffee Online Shop Cloning
+- https://github.com/worldsat/project195 
+
+1. 프로젝트 생성
+2. build.gradle.kts (:app) 설정 추가
+3. res/values/colors.xml 추가
+4. res/drawable 폴더 붙여넣기 (다운로드 한 리소스)
+5. Firebase 설정 - Menu Tools > Firebase 클릭
+    - Realtime Database 클릭 > Connect to Firebase 버튼 클릭
+    - 웹사이트 에서 프로젝트 생성 (시작 영어 소문자 주의!)
+    - 다음으로 넘기면 자동 연결완료!
+6. Add the Realtime Database to your app 아래 SDK 연결 버튼 클릭
+7. Firebase 사이트로 가서 Realtime Database 클릭
+    - Create Database 버튼 클릭
+    - 싱가포르 선택 후 다음
+    - 잠금모드로 시작 확인 후 완료
+
+8. Data 탭에서 세로... > Import JSON 선택
+    - database_firebase.json 선택 업로드
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0051.png" width="800">
+
+    [RealtimeDatabase구조]
+
+9. Storage 선택 
+    - 프로덕션 모드에서 시작
+    - 리소스 파일에서 5개 jpg 업로드
+    - 각 커피 이미지 링크주소 복사
+    - Realtime Datase Item 내 picUrl에 붙여넣기
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0052.png" width="800">
+
+    [이미지URL매핑]

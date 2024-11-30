@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "6821535865",
+    "project_id": "hugocoffeeshop-98ec6",
+    "storage_bucket": "hugocoffeeshop-98ec6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6821535865:android:3f8266b3011b00e5a074a8",
+        "android_client_info": {
+          "package_name": "com.hugo83.hugocoffeeshop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDesUn4csG0-YIV1-TTVoH3G6oSt3J-lvU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
