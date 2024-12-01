@@ -127,6 +127,7 @@
     - Create Database 버튼 클릭
     - 싱가포르 선택 후 다음
     - 잠금모드로 시작 확인 후 완료
+    - 규칙에 ".read": true, 로 변경
 
 8. Data 탭에서 세로... > Import JSON 선택
     - database_firebase.json 선택 업로드
@@ -144,3 +145,65 @@
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0052.png" width="800">
 
     [이미지URL매핑]
+
+10. New > Activity > Emtpy Views Activity 선택
+    - IntroActivity로 이름 변경
+    - Launcher Activity 체크
+    - Finish 버튼 클릭
+
+11. activity_intro.xml 
+    - Pixel 7 Pro 선택
+    - ScrollView를 main에 드래그
+    - 스크롤뷰 아래 LinearLayout에 ImageView 드래그 후 intro_pic 선택
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0053.png" width="800">
+
+
+    - ... 디자이너에서 처리 
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0054.png" width="480">
+
+12. Resource Manager 클릭
+    - + 클릭 > Drawable Resource File 선택
+    - File Name, 'brown_gradient' 입력
+    
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <selector xmlns:android="http://schemas.android.com/apk/res/android">
+        <item>
+            <shape android:shape="rectangle">
+                <gradient android:angle="-90" android:endColor="@color/darkBrown"
+                        android:startColor="@color/black" />
+            </shape>
+        </item>
+    </selector>
+    ```
+
+13. Resource Manager에서 'orange_bg' 추가
+
+    ```xml
+    <selector xmlns:android="http://schemas.android.com/apk/res/android">
+        <item>
+            <shape android:shape="rectangle">
+                <solid android:color="@color/orange" />
+                <corners android:radius="10dp" />
+            </shape>
+        </item>
+    </selector>
+    ```
+
+14. IntroActivity.kt 수정
+
+15. AndroidManifest.xml 수정
+    - intent-filter IntroActivity로 이전
+    - MainActivity 에서는 삭제
+
+    ```xml
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+    ```
+
+16. BaseActivity 추가 생성
+    - Generate a Layout File 체크 해제
