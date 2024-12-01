@@ -8,7 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.hugo83.hugocoffeeshop.databinding.ActivityIntroBinding
 
-class IntroActivity : AppCompatActivity() {
+class IntroActivity : BaseActivity() {
     val binding by lazy { ActivityIntroBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {

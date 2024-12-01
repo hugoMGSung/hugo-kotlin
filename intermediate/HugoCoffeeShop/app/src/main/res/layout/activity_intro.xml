@@ -23,7 +23,7 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="401dp"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/intro_pic" />
 
@@ -41,16 +41,16 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="@color/orange"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="24dp" />
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp" />
 
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Find the best coffee\nfor you"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="12dp"
                     android:textSize="31sp"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
@@ -60,7 +60,7 @@
                     android:id="@+id/startBtn"
                     android:layout_width="110dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="24dp"
                     android:layout_gravity="end"
                     android:textSize="18sp"

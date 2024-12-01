@@ -207,3 +207,13 @@
 
 16. BaseActivity 추가 생성
     - Generate a Layout File 체크 해제
+    - BaseActivity 내용 작성
+
+17. IntroActivity의 부모클래스를 BaseActivity로 변경
+    - BaseActivity open 처리 - AndroidManifest.xml에 추가됨
+
+18. 현재 LG G5에 맞춰서 작업하려면 Galaxy Nexus(4.65` 720, 360x640dp, xhdpi) 에 맞춰야 함
+    - 다른 디바이스와 매칭해서 디스플레이 하는 방법 모색
+    - 캡쳐된 이미지 크기 - 1440 x 2560 px 
+
+    <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0055.png" width="310">
