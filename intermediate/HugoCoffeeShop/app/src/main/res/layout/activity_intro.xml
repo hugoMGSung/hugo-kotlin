@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/darkBrown"
-    tools:context=".IntroActivity">
-
+    tools:context=".activity.IntroActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,7 +22,7 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
-                android:layout_height="401dp"
+                android:layout_height="413dp"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/intro_pic" />
 

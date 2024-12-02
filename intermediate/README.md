@@ -217,3 +217,14 @@
     - 캡쳐된 이미지 크기 - 1440 x 2560 px 
 
     <img src="https://raw.githubusercontent.com/hugoMGSung/hugo-kotlin/refs/heads/main/images/kt0055.png" width="310">
+
+19. activity_main.xml 작업
+    - Drawable Resource File 생성
+    - edittext_bg.xml 입력 
+    - 꽤 긴 작업!
+    - res/themes/themes.xml 내용 수정
+
+20. 각 패키지 추가
+    - activity, adapter, helper, model, viewmodel 생성
+
+21. Activity 세개를 activity 폴더로 옮기기
