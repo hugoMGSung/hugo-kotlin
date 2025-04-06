@@ -94,6 +94,30 @@
 
     9. 메뉴 상단 app > 플레이버튼 클릭해서 앱 실행
 
+    10. `중요!` - SDK 버전이 맞지 않으면 오류 발생
+
+        ```groovy
+        plugins {
+            alias(libs.plugins.android.application)
+            alias(libs.plugins.kotlin.android)
+        }
+
+        android {
+            namespace = "com.hugo83.gptgenapp"
+            compileSdk = 35  // 여기!
+
+            defaultConfig {
+                applicationId = "com.hugo83.gptgenapp"
+                minSdk = 21
+                targetSdk = 35  // 여기! 수정 필요!
+                versionCode = 1
+                versionName = "1.0"
+
+                testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+            }
+
+        ```
+
 #### 다음 진행(Android Studio)
 - 진행 순서
     1. 실행 후 Gradle 설정 필요
